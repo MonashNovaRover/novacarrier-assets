@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <locale lang="en"/>
+  <options hw="ch341a" clear="0" skipff="1" unprot="0" verify="1" moredev="0" chipname="" SPIExpert="1" spi_speed="1_5Mhz" blankcheck="0" LoadLastDev="1" SaveFhistory="1"/>
+  <Windows DPI="96" Top="144" Left="210" LogH="134" Width="886" Height="506"/>
+  <ChipHistory list=""/>
+  <FileHistory/>
+</settings>

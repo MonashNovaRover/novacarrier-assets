@@ -1,0 +1,1975 @@
+
+\0\0\xFF\xE2
+[0000.063] I> MB1 (version: 1.4.0.1-t234-54845784-08e631ca)
+[0000.069] I> t234-A01-1-Silicon (0x12347) Prod
+[0000.073] I> Boot-mode : Coldboot
+[0000.076] I> Entry timestamp: 0x00000000
+[0000.080] I> last_boot_error: 0x0
+[0000.083] I> BR-BCT: preprod_dev_sign: 0
+[0000.087] I> rst_source: 0x0, rst_level: 0x0
+[0000.091] I> Task: SE error check
+[0000.094] I> Task: Bootchain select WAR set
+[0000.098] I> Task: Enable SLCG
+[0000.101] I> Task: CRC check
+[0000.104] I> Task: Initialize MB2 params
+[0000.108] I> MB2-params @ 0x40060000
+[0000.112] I> Task: Crypto init
+[0000.115] I> Task: Perform MB1 KAT tests
+[0000.119] I> Task: NVRNG health check
+[0000.122] I> NVRNG: Health check success
+[0000.126] I> Task: MSS Bandwidth limiter settings for iGPU clients
+[0000.132] I> Task: Enabling and initialization of Bandwidth limiter
+[0000.138] I> No request to configure MBWT settings for any PC!
+[0000.144] I> Task: Secure debug controls
+[0000.147] I> Task: strap war set
+[0000.151] I> Task: Initialize SOC Therm
+[0000.154] I> Task: Program NV master stream id
+[0000.159] I> Task: Verify boot mode
+[0000.164] I> Task: Alias fuses
+[0000.168] W> FUSE_ALIAS: Fuse alias on production fused part is not supported.
+[0000.175] I> Task: Print SKU type
+[0000.178] I> FUSE_OPT_CCPLEX_CLUSTER_DISABLE = 0x000001c8
+[0000.183] I> FUSE_OPT_GPC_DISABLE = 0x00000002
+[0000.187] I> FUSE_OPT_TPC_DISABLE = 0x000000f0
+[0000.192] I> FUSE_OPT_DLA_DISABLE = 0x00000003
+[0000.196] I> FUSE_OPT_PVA_DISABLE = 0x00000001
+[0000.200] I> FUSE_OPT_NVENC_DISABLE = 0x00000001
+[0000.205] I> FUSE_OPT_NVDEC_DISABLE = 0x00000000
+[0000.209] I> FUSE_OPT_FSI_DISABLE = 0x00000001
+[0000.213] I> FUSE_OPT_EMC_DISABLE = 0x0000000c
+[0000.218] I> FUSE_BOOTROM_PATCH_VERSION = 0x7
+[0000.222] I> FUSE_PSCROM_PATCH_VERSION = 0x7
+[0000.226] I> FUSE_OPT_ADC_CAL_FUSE_REV = 0x2
+[0000.230] I> FUSE_SKU_INFO_0 = 0xd5
+[0000.233] I> FUSE_OPT_SAMPLE_TYPE_0 = 0x3 PS 
+[0000.238] I> FUSE_PACKAGE_INFO_0 = 0x2
+[0000.241] I> SKU: Prod
+[0000.243] I> Task: Boost clocks
+[0000.246] I> Initializing NAFLL for BPMP_CPU_NIC.
+[0000.252] I> BPMP NAFLL: fll_lock = 1, dvco_min_reached = 0
+[0000.257] I> BPMP NAFLL lock success.
+[0000.260] I> BPMP_CPU_NIC : src = 42, divisor = 0
+[0000.265] I> Initializing PLLC2 for AXI_CBB.
+[0000.269] I> AXI_CBB : src = 35, divisor = 0
+[0000.273] I> Task: Voltage monitor
+[0000.277] I> VMON: Vmon re-calibration and fine tuning done
+[0000.282] I> Task: UPHY init
+[0000.287] I> HSIO UPHY init done
+[0000.290] W> Skipping GBE UPHY config
+[0000.293] I> Task: Boot device init
+[0000.297] I> Boot_device: QSPI_FLASH instance: 0
+[0000.301] I> Qspi clock source : pllc_out0
+[0000.305] I> QSPI Flash: Macronix 64MB
+[0000.309] I> QSPI-0l initialized successfully
+[0000.313] I> Task: TSC init
+[0000.316] I> Task: Load membct
+[0000.319] I> RAM_CODE 0x4000421
+[0000.322] I> Loading MEMBCT 
+[0000.325] I> Slot: 0
+[0000.327] I> Binary[0] block-3840 (partition size: 0x40000)
+[0000.332] I> Binary name: MEM-BCT-0
+[0000.336] I> Size of crypto header is 8192
+[0000.340] I> Size of crypto header is 8192
+[0000.344] I> strt_pg_num(3840) num_of_pgs(16) read_buf(0x40050000)
+[0000.350] I> BCH of MEM-BCT-0 read from storage
+[0000.354] I> BCH address is : 0x40050000
+[0000.358] I> MEM-BCT-0 header integrity check is success
+[0000.363] I> Binary magic in BCH component 0 is MEM0
+[0000.368] I> component binary type is 0
+[0000.372] I> strt_pg_num(3856) num_of_pgs(115) read_buf(0x40040000)
+[0000.378] I> MEM-BCT-0 binary is read from storage
+[0000.383] I> MEM-BCT-0 binary integrity check is success
+[0000.388] I> Binary MEM-BCT-0 loaded successfully at 0x40040000 (0xe580)
+[0000.395] I> RAM_CODE 0x4000421
+[0000.400] I> RAM_CODE 0x4000421
+[0000.404] I> Task: Load Page retirement list
+[0000.409] I> Task: SDRAM params override
+[0000.412] I> Task: Save mem-bct info
+[0000.416] I> Task: Carveout allocate
+[0000.419] I> RCM blob carveout will not be allocated
+[0000.424] I> Update CCPLEX IST carveout from MB1-BCT
+[0000.429] I> ECC region[0]: Start:0x0, End:0x0
+[0000.433] I> ECC region[1]: Start:0x0, End:0x0
+[0000.437] I> ECC region[2]: Start:0x0, End:0x0
+[0000.442] I> ECC region[3]: Start:0x0, End:0x0
+[0000.446] I> ECC region[4]: Start:0x0, End:0x0
+[0000.450] I> Non-ECC region[0]: Start:0x80000000, End:0x280000000
+[0000.456] I> Non-ECC region[1]: Start:0x0, End:0x0
+[0000.461] I> Non-ECC region[2]: Start:0x0, End:0x0
+[0000.465] I> Non-ECC region[3]: Start:0x0, End:0x0
+[0000.470] I> Non-ECC region[4]: Start:0x0, End:0x0
+[0000.481] I> allocated(CO:43) base:0xbe000000 size:0x4000000 align: 0x200000
+[0000.488] I> allocated(CO:39) base:0x27de00000 size:0x2200000 align: 0x10000
+[0000.495] I> allocated(CO:20) base:0x27a000000 size:0x2000000 align: 0x2000000
+[0000.502] I> allocated(CO:24) base:0x278000000 size:0x2000000 align: 0x2000000
+[0000.509] I> allocated(CO:28) base:0x276000000 size:0x2000000 align: 0x2000000
+[0000.516] I> allocated(CO:22) base:0x27c000000 size:0x1000000 align: 0x1000000
+[0000.523] I> allocated(CO:35) base:0x275000000 size:0x1000000 align: 0x100000
+[0000.530] I> allocated(CO:02) base:0x27d000000 size:0x800000 align: 0x800000
+[0000.537] I> allocated(CO:03) base:0x274800000 size:0x800000 align: 0x800000
+[0000.544] I> allocated(CO:06) base:0x274000000 size:0x800000 align: 0x800000
+[0000.551] I> allocated(CO:56) base:0x273800000 size:0x800000 align: 0x200000
+[0000.558] I> allocated(CO:07) base:0x27d800000 size:0x400000 align: 0x400000
+[0000.565] I> allocated(CO:33) base:0x273400000 size:0x400000 align: 0x200000
+[0000.572] I> allocated(CO:19) base:0x273180000 size:0x280000 align: 0x10000
+[0000.579] I> allocated(CO:23) base:0x27dc00000 size:0x200000 align: 0x200000
+[0000.585] I> allocated(CO:01) base:0x273000000 size:0x100000 align: 0x100000
+[0000.592] I> allocated(CO:05) base:0x272f00000 size:0x100000 align: 0x100000
+[0000.599] I> allocated(CO:08) base:0x272e00000 size:0x100000 align: 0x100000
+[0000.606] I> allocated(CO:09) base:0x272d00000 size:0x100000 align: 0x100000
+[0000.613] I> allocated(CO:12) base:0x272c00000 size:0x100000 align: 0x100000
+[0000.620] I> allocated(CO:15) base:0x272b00000 size:0x100000 align: 0x100000
+[0000.627] I> allocated(CO:17) base:0x272a00000 size:0x100000 align: 0x100000
+[0000.634] I> allocated(CO:27) base:0x272900000 size:0x100000 align: 0x100000
+[0000.641] I> allocated(CO:42) base:0x272800000 size:0x100000 align: 0x100000
+[0000.648] I> allocated(CO:54) base:0x273100000 size:0x80000 align: 0x80000
+[0000.655] I> allocated(CO:34) base:0x2727f0000 size:0x10000 align: 0x10000
+[0000.661] I> allocated(CO:72) base:0x2725f0000 size:0x200000 align: 0x10000
+[0000.668] I> allocated(CO:47) base:0x272000000 size:0x400000 align: 0x200000
+[0000.675] I> allocated(CO:50) base:0x271e00000 size:0x200000 align: 0x100000
+[0000.682] I> allocated(CO:48) base:0x2725d0000 size:0x20000 align: 0x10000
+[0000.689] I> allocated(CO:69) base:0x2725b0000 size:0x20000 align: 0x10000
+[0000.696] I> allocated(CO:49) base:0x2725a0000 size:0x10000 align: 0x10000
+[0000.702] I> NSDRAM base: 0x80000000, end: 0x2725f0000, size: 0x1f25f0000
+[0000.709] I> Task: Thermal check
+[0000.712] I> max_chip_limit = 105
+[0000.715] I> min_chip_limit = -28
+[0000.719] I> max temp read = 34
+[0000.721] I> min temp read = 33
+[0000.724] I> Task: Update FSI SCR with thermal fuse data
+[0000.730] I> Task: Enable WDT 5th expiry
+[0000.733] I> Task: I2C register
+[0000.736] I> Task: Set I2C bus freq
+[0000.740] I> Task: Reset FSI
+[0000.742] I> Task: Pinmux init
+[0000.746] I> skipped mmio_addr = 0x9240008
+[0000.750] I> skipped mmio_addr = 0x9240000
+[0000.754] I> skipped mmio_addr = 0x9240010
+[0000.757] I> skipped mmio_addr = 0x9240018
+[0000.761] I> skipped mmio_addr = 0x9240020
+[0000.765] I> skipped mmio_addr = 0x9240030
+[0000.769] I> skipped mmio_addr = 0x9240028
+[0000.773] I> skipped mmio_addr = 0x9240038
+[0000.777] I> skipped mmio_addr = 0x9240040
+[0000.781] I> skipped mmio_addr = 0x9240048
+[0000.785] I> skipped mmio_addr = 0x9241000
+[0000.789] I> skipped mmio_addr = 0x9241008
+[0000.793] I> skipped mmio_addr = 0x9241010
+[0000.797] I> skipped mmio_addr = 0x9241018
+[0000.801] I> skipped mmio_addr = 0x9241020
+[0000.805] I> skipped mmio_addr = 0x9241028
+[0000.809] I> skipped mmio_addr = 0x9241030
+[0000.813] I> skipped mmio_addr = 0x9241038
+[0000.817] I> skipped mmio_addr = 0x9241040
+[0000.820] I> skipped mmio_addr = 0x9242000
+[0000.824] I> skipped mmio_addr = 0x9242008
+[0000.828] I> Task: Prod config init
+[0000.832] I> Task: Pad voltage init
+[0000.835] I> Task: Prod init
+[0000.838] I> Task: Program rst req config reg
+[0000.842] I> Task: Common rail init
+[0000.845] I> DONE: Thermal config
+[0000.849] W> DEVICE_PROD: module = 13, instance = 4 not found in device prod.
+[0000.857] I> DONE: SOC rail config
+[0000.861] W> PMIC_CONFIG: Rail: MEMIO rail config not found in MB1 BCT.
+[0000.867] I> DONE: MEMIO rail config
+[0000.871] W> PMIC_CONFIG: Rail: GPU rail info not found in MB1 BCT.
+[0000.877] I> DONE: GPU rail info
+[0000.881] W> PMIC_CONFIG: Rail: CV rail info not found in MB1 BCT.
+[0000.887] I> DONE: CV rail info
+[0000.890] I> Task: Mem clock src
+[0000.893] I> Task: Misc. board config
+[0000.897] I> PMIC_CONFIG: Platform config not found in MB1 BCT.
+[0000.903] I> Task: SDRAM init
+[0000.906] I> MemoryType: 4 MemBctRevision: 1
+[0000.913] I> MSS CAR: PLLM/HUB programming for MemoryType: 4 and MemBctRevision: 1
+[0000.920] I> MSS CAR: Init PLLM
+[0000.923] I> MSS CAR: Init PLLHUB
+[0000.928] I> Encryption:   MTS: en, TX: en, VPR: en, GSC: en
+[0000.939] I> SDRAM initialized!
+[0000.942] I> SDRAM Size in Total 0x200000000
+[0000.946] I> Task: Dram Ecc scrub
+[0000.949] I> Task: DRAM alias check
+[0000.956] I> Task: Program NSDRAM carveout
+[0000.960] I> NSDRAM carveout encryption is enabled
+[0000.965] I> Program NSDRAM carveout
+[0000.968] I> Task: Register checker
+[0000.972] I> Task: Enable clock-mon
+[0000.976] I> FMON: Fmon re-programming done
+[0000.980] I> Task: Mapper init
+[0000.982] I> Task: SC7 Context Init
+[0000.986] I> Task: CCPLEX IST init
+[0000.989] I> Task: CPU WP0
+[0000.992] I> Loading MCE
+[0000.994] I> Slot: 0
+[0000.996] I> Binary[8] block-22784 (partition size: 0x80000)
+[0001.002] I> Binary name: MCE
+[0001.005] I> Size of crypto header is 8192
+[0001.008] I> Size of crypto header is 8192
+[0001.012] I> strt_pg_num(22784) num_of_pgs(16) read_buf(0x4003e000)
+[0001.019] I> BCH of MCE read from storage
+[0001.023] I> BCH address is : 0x4003e000
+[0001.026] I> MCE header integrity check is success
+[0001.031] I> Binary magic in BCH component 0 is MTSM
+[0001.036] I> component binary type is 8
+[0001.040] I> Size of crypto header is 8192
+[0001.043] I> strt_pg_num(22800) num_of_pgs(350) read_buf(0x40000000)
+[0001.052] I> MCE binary is read from storage
+[0001.056] I> MCE binary integrity check is success
+[0001.061] I> Binary MCE loaded successfully at 0x40000000 (0x2baf0)
+[0001.067] I> Size of crypto header is 8192
+[0001.078] I> Size of crypto header is 8192
+[0001.082] I> Sending WP0 mailbox command to PSC
+[0001.091] I> Task: XUSB Powergate
+[0001.094] I> Skipping powergate XUSB.
+[0001.098] I> Task: MB1 fixed firewalls
+[0001.104] W> Firewall readback mismatch
+[0001.109] I> Task: Load bpmp-fw
+[0001.112] I> Slot: 0
+[0001.114] I> Binary[15] block-9984 (partition size: 0x180000)
+[0001.120] I> Binary name: BPMP_FW
+[0001.123] I> Size of crypto header is 8192
+[0001.127] I> Size of crypto header is 8192
+[0001.131] I> strt_pg_num(9984) num_of_pgs(16) read_buf(0x807fe000)
+[0001.137] I> BCH of BPMP_FW read from storage
+[0001.141] I> BCH address is : 0x807fe000
+[0001.145] I> BPMP_FW header integrity check is success
+[0001.150] I> Binary magic in BCH component 0 is BPMF
+[0001.155] I> component binary type is 15
+[0001.158] I> Size of crypto header is 8192
+[0001.162] I> strt_pg_num(10000) num_of_pgs(2017) read_buf(0x80000000)
+[0001.180] I> BPMP_FW binary is read from storage
+[0001.186] I> BPMP_FW binary integrity check is success
+[0001.191] I> Binary BPMP_FW loaded successfully at 0x80000000 (0xfc080)
+[0001.198] I> Slot: 0
+[0001.200] I> Binary[16] block-13056 (partition size: 0x400000)
+[0001.206] I> Binary name: BPMP_FW_DTB
+[0001.209] I> Size of crypto header is 8192
+[0001.213] I> Size of crypto header is 8192
+[0001.217] I> strt_pg_num(13056) num_of_pgs(16) read_buf(0x807fc000)
+[0001.223] I> BCH of BPMP_FW_DTB read from storage
+[0001.228] I> BCH address is : 0x807fc000
+[0001.232] I> BPMP_FW_DTB header integrity check is success
+[0001.237] I> Binary magic in BCH component 0 is BPMD
+[0001.242] I> component binary type is 16
+[0001.246] I> Size of crypto header is 8192
+[0001.249] I> strt_pg_num(13072) num_of_pgs(384) read_buf(0x807cbff0)
+[0001.258] I> BPMP_FW_DTB binary is read from storage
+[0001.263] I> BPMP_FW_DTB binary integrity check is success
+[0001.268] I> Binary BPMP_FW_DTB loaded successfully at 0x807cbff0 (0x2ff80)
+[0001.275] I> Task: BPMP fw ast config
+[0001.279] I> Task: Load psc-fw
+[0001.282] I> Slot: 0
+[0001.284] I> Binary[17] block-21248 (partition size: 0xc0000)
+[0001.289] I> Binary name: PSC_FW
+[0001.292] I> Size of crypto header is 8192
+[0001.296] I> Size of crypto header is 8192
+[0001.300] I> strt_pg_num(21248) num_of_pgs(16) read_buf(0x80ffe000)
+[0001.307] I> BCH of PSC_FW read from storage
+[0001.311] I> BCH address is : 0x80ffe000
+[0001.314] I> PSC_FW header integrity check is success
+[0001.319] I> Binary magic in BCH component 0 is PFWP
+[0001.324] I> component binary type is 17
+[0001.328] I> Size of crypto header is 8192
+[0001.332] I> strt_pg_num(21264) num_of_pgs(591) read_buf(0x80fb4200)
+[0001.341] I> PSC_FW binary is read from storage
+[0001.346] I> PSC_FW binary integrity check is success
+[0001.351] I> Binary PSC_FW loaded successfully at 0x80fb4200 (0x49df0)
+[0001.358] I> Task: Load nvdec-fw
+[0001.361] I> Slot: 0
+[0001.363] I> Binary[7] block-6400 (partition size: 0x100000)
+[0001.368] I> Binary name: NVDEC
+[0001.371] I> Size of crypto header is 8192
+[0001.375] I> Size of crypto header is 8192
+[0001.379] I> strt_pg_num(6400) num_of_pgs(16) read_buf(0x800fe000)
+[0001.385] I> BCH of NVDEC read from storage
+[0001.389] I> BCH address is : 0x800fe000
+[0001.393] I> NVDEC header integrity check is success
+[0001.398] I> Binary magic in BCH component 0 is NDEC
+[0001.403] I> component binary type is 7
+[0001.406] I> Size of crypto header is 8192
+[0001.410] I> strt_pg_num(6416) num_of_pgs(560) read_buf(0x80000000)
+[0001.420] I> NVDEC binary is read from storage
+[0001.425] I> NVDEC binary integrity check is success
+[0001.429] I> Binary NVDEC loaded successfully at 0x80000000 (0x46000)
+[0001.436] I> Size of crypto header is 8192
+[0001.447] I> Task: Load tsec-fw
+[0001.450] I> TSEC-FW load support not enabled
+[0001.454] I> Task: GPIO interrupt map
+[0001.458] I> Task: SC7 context save
+[0001.461] I> Slot: 0
+[0001.463] I> Binary[27] block-0 (partition size: 0x100000)
+[0001.469] I> Binary name: BR_BCT
+[0001.472] I> Size of crypto header is 8192
+[0001.476] I> Size of crypto header is 8192
+[0001.479] I> Size of crypto header is 8192
+[0001.483] I> strt_pg_num(0) num_of_pgs(16) read_buf(0xa0000000)
+[0001.489] I> BR_BCT binary is read from storage
+[0001.494] I> BR_BCT binary integrity check is success
+[0001.499] I> Binary BR_BCT loaded successfully at 0xa0000000 (0x2000)
+[0001.505] I> Slot: 0
+[0001.507] I> Binary[13] block-23808 (partition size: 0x30000)
+[0001.513] I> Binary name: SC7-FW
+[0001.516] I> Size of crypto header is 8192
+[0001.520] I> Size of crypto header is 8192
+[0001.523] I> Size of crypto header is 8192
+[0001.527] I> Size of crypto header is 8192
+[0001.531] I> strt_pg_num(23808) num_of_pgs(16) read_buf(0xa0002000)
+[0001.538] I> BCH of SC7-FW read from storage
+[0001.542] I> BCH address is : 0xa0002000
+[0001.546] I> SC7-FW header integrity check is success
+[0001.550] I> Binary magic in BCH component 0 is WB0B
+[0001.555] I> component binary type is 13
+[0001.559] I> Size of crypto header is 8192
+[0001.563] I> strt_pg_num(23824) num_of_pgs(347) read_buf(0xa0004000)
+[0001.571] I> SC7-FW binary is read from storage
+[0001.576] I> SC7-FW binary integrity check is success
+[0001.581] I> Binary SC7-FW loaded successfully at 0xa0004000 (0x2b440)
+[0001.587] I> Slot: 0
+[0001.589] I> Binary[22] block-24192 (partition size: 0x30000)
+[0001.595] I> Binary name: PSC_RF
+[0001.598] I> Size of crypto header is 8192
+[0001.602] I> Size of crypto header is 8192
+[0001.606] I> Size of crypto header is 8192
+[0001.610] I> Size of crypto header is 8192
+[0001.614] I> strt_pg_num(24192) num_of_pgs(16) read_buf(0xa002f440)
+[0001.620] I> BCH of PSC_RF read from storage
+[0001.624] I> BCH address is : 0xa002f440
+[0001.628] I> PSC_RF header integrity check is success
+[0001.633] I> Binary magic in BCH component 0 is PSCR
+[0001.637] I> component binary type is 22
+[0001.641] I> Size of crypto header is 8192
+[0001.645] I> strt_pg_num(24208) num_of_pgs(224) read_buf(0xa0031440)
+[0001.653] I> PSC_RF binary is read from storage
+[0001.657] I> PSC_RF binary integrity check is success
+[0001.662] I> Binary PSC_RF loaded successfully at 0xa0031440 (0x1be60)
+[0001.672] I> Task: Save WP0 payload to SC7 ctx
+[0001.676] I> Task: Load MB2rf binary to SC7 ctx
+[0001.680] I> Slot: 0
+[0001.682] I> Binary[14] block-24576 (partition size: 0x20000)
+[0001.688] I> Binary name: MB2_RF
+[0001.691] I> Size of crypto header is 8192
+[0001.695] I> Size of crypto header is 8192
+[0001.699] I> Size of crypto header is 8192
+[0001.703] I> Size of crypto header is 8192
+[0001.707] I> strt_pg_num(24576) num_of_pgs(16) read_buf(0xa00d5d10)
+[0001.713] I> BCH of MB2_RF read from storage
+[0001.717] I> BCH address is : 0xa00d5d10
+[0001.721] I> MB2_RF header integrity check is success
+[0001.726] I> Binary magic in BCH component 0 is MB2R
+[0001.731] I> component binary type is 14
+[0001.734] I> Size of crypto header is 8192
+[0001.738] I> strt_pg_num(24592) num_of_pgs(223) read_buf(0xa00d7d10)
+[0001.746] I> MB2_RF binary is read from storage
+[0001.750] I> MB2_RF binary integrity check is success
+[0001.755] I> Binary MB2_RF loaded successfully at 0xa00d7d10 (0x1bd90)
+[0001.762] I> Task: Save fuse alias data to SC7 ctx
+[0001.766] I> Task: Save PMIC data to SC7 ctx
+[0001.770] I> Task: Save Pinmux data to SC7 ctx
+[0001.775] I> Task: Save Pad Voltage data to SC7 ctx
+[0001.779] I> Task: Save controller prod data to SC7 ctx
+[0001.784] I> Task: Save prod cfg data to SC7 ctx
+[0001.789] I> Task: Save I2C bus freq data to SC7 ctx
+[0001.794] I> Task: Save SOCTherm data to SC7 ctx
+[0001.798] I> Task: Save FMON data to SC7 ctx
+[0001.802] I> Task: Save VMON data to SC7 ctx
+[0001.806] I> Task: Save TZDRAM data to SC7 ctx
+[0001.811] I> Task: Save GPIO int data to SC7 ctx
+[0001.815] I> Task: Save clock data to SC7 ctx
+[0001.819] I> Task: Save debug data to SC7 ctx
+[0001.824] I> Task: Save MBWT data to SC7 ctx
+[0001.832] I> SC7 context save done
+[0001.835] I> Task: Load MB2/Applet/FSKP
+[0001.839] I> Loading MB2
+[0001.841] I> Slot: 0
+[0001.843] I> Binary[6] block-8448 (partition size: 0x80000)
+[0001.848] I> Binary name: MB2
+[0001.851] I> Size of crypto header is 8192
+[0001.855] I> Size of crypto header is 8192
+[0001.859] I> strt_pg_num(8448) num_of_pgs(16) read_buf(0x8007e000)
+[0001.865] I> BCH of MB2 read from storage
+[0001.869] I> BCH address is : 0x8007e000
+[0001.873] I> MB2 header integrity check is success
+[0001.877] I> Binary magic in BCH component 0 is MB2B
+[0001.882] I> component binary type is 6
+[0001.886] I> Size of crypto header is 8192
+[0001.890] I> strt_pg_num(8464) num_of_pgs(845) read_buf(0x80000000)
+[0001.901] I> MB2 binary is read from storage
+[0001.906] I> MB2 binary integrity check is success
+[0001.910] I> Binary MB2 loaded successfully at 0x80000000 (0x69900)
+[0001.917] I> Task: Map CCPLEX SHARED carveout
+[0001.921] I> Task: Prepare MB2 params
+[0001.925] I> Task: Dram ecc test
+[0001.928] I> Task: Misc NV security settings
+[0001.932] I> NVDEC sticky bits programming done
+[0001.936] I> Successfully powergated NVDEC
+[0001.940] I> Task: Disable/Reload WDT
+[0001.944] I> Task: Program misc carveouts
+[0001.948] I> Program IPC carveouts
+[0001.951] I> Task: Disable SCPM/POD reset
+[0001.955] I> SLCG Global override status := 0x0
+[0001.959] I> MB1: MSS reconfig completed
+I> MB2 (version: 0.0.0.0-t234-54845784-c6a05a9f)
+I> t234-A01-1-Silicon (0x12347)
+I> Boot-mode : Coldboot
+I> Emulation: 
+I> Entry timestamp: 0x001e5652
+I> Regular heap: [base:0x40040000, size:0x10000]
+I> DMA heap: [base:0x273800000, size:0x800000]
+I> Task: SE error check
+I> Task: Crypto init
+I> Task: MB2 Params integrity check
+I> Task: ARI update carveout TZDRAM
+I> Task: Configure OEM set LA/PTSA values
+I> Task: Check MC errors
+I> Task: Enable hot-plug capability
+I> Task: PSC mailbox init
+I> Task: Enable clock for external modules
+I> Task: OEM SC7 context save init
+I> Task: I2C register
+I> Task: Map CCPLEX_INTERWORLD_SHMEM carveout
+I> Task: Program CBB PCIE AMAP regions
+I> Task: Boot device init
+I> Boot_device: QSPI_FLASH instance: 0
+I> Qspi clock source : pllc_out0
+I> QSPI Flash: Macronix 64MB
+I> QSPI-0l initialized successfully
+I> Secondary storage device: QSPI_FLASH instance: 0
+I> Task: Partition Manager Init
+I> strt_pg_num(1) num_of_pgs(1) read_buf(0x273801000)
+I> strt_pg_num(131071) num_of_pgs(1) read_buf(0x273801000)
+I> strt_pg_num(131039) num_of_pgs(32) read_buf(0x273801200)
+I> Found 60 partitions in QSPI_FLASH (instance 0)
+I> Task: Pass DRAM ECC PRL Flag to FSI
+I> Task: Load and authenticate registered FWs
+I> Task: Load AUXP FWs
+I> Successfully register SPE FW load task with MB2 loader
+I> Skipping SCE FW load
+I> Successfully register RCE FW load task with MB2 loader
+I> Successfully register DCE FW load task with MB2 loader
+I> Unpowergating APE
+I> Unpowergate done
+I> Successfully register APE FW load task with MB2 loader
+I> Skipping FSI FW load
+I> Successfully register XUSB FW load task with MB2 loader
+I> Successfully register PVA FW load task with MB2 loader
+I> Partition name: A_spe-fw
+I> Size of partition: 589824
+I> Binary@ device:3/0 block-55040 (partition size: 0x90000), name: A_spe-fw
+I> strt_pg_num(55040) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(55056) num_of_pgs(512) read_buf(0x272e00000)
+I> Partition name: A_rce-fw
+I> Size of partition: 1048576
+I> Binary@ device:3/0 block-56192 (partition size: 0x100000), name: A_rce-fw
+I> strt_pg_num(56192) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(56208) num_of_pgs(880) read_buf(0x272a00000)
+I> spe: Authentication Finalize Done
+I> Binary spe loaded successfully at 0x272e00000
+I> Partition name: A_dce-fw
+I> Size of partition: 5242880
+I> Binary@ device:3/0 block-44800 (partition size: 0x500000), name: A_dce-fw
+I> strt_pg_num(44800) num_of_pgs(16) read_buf(0x40066650)
+I> rce: Authentication Finalize Done
+I> Binary rce loaded successfully at 0x272a00000
+I> Successfully register RCE FW context save task with MB2 loader
+I> dce : oem authentication of header done
+I> strt_pg_num(44816) num_of_pgs(1) read_buf(0x2739400d8)
+I> strt_pg_num(44816) num_of_pgs(8) read_buf(0x2739400d8)
+I> dce : meta-blob integrity check is success.
+I> strt_pg_num(44824) num_of_pgs(512) read_buf(0x2738000c0)
+I> strt_pg_num(45336) num_of_pgs(512) read_buf(0x2738400c0)
+I> dce : will be decompressed at 0x27a000000
+I> version 1 Bin 1 BCheckSum 0 content_size 0 Content ChkSum 1 reserved_00  0
+I> Reserved10 0 BlockMaxSize 5 Reserved11 0
+I> strt_pg_num(45848) num_of_pgs(512) read_buf(0x2738800c0)
+I> dce : decompressed to 12075136 bytes
+I> dce: plain binary integrity check is success
+I> Partition name: A_adsp-fw
+I> Size of partition: 2097152
+I> Binary@ device:3/0 block-58240 (partition size: 0x200000), name: A_adsp-fw
+I> strt_pg_num(58240) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(58256) num_of_pgs(800) read_buf(0x27d800000)
+I> dce: Authentication Finalize Done
+I> Binary dce loaded successfully at 0x27a000000
+I> Partition name: A_xusb-fw
+I> Size of partition: 262144
+I> Binary@ device:3/0 block-9472 (partition size: 0x40000), name: A_xusb-fw
+I> strt_pg_num(9472) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(9488) num_of_pgs(312) read_buf(0x272f00000)
+I> ape: Authentication Finalize Done
+I> Binary ape loaded successfully at 0x27d800000
+I> Successfully register APE FW context save task with MB2 loader
+I> Partition name: A_pva-fw
+I> Size of partition: 262144
+I> Binary@ device:3/0 block-62336 (partition size: 0x40000), name: A_pva-fw
+I> strt_pg_num(62336) num_of_pgs(16) read_buf(0x40066650)
+I> xusb: Authentication Finalize Done
+I> Binary xusb loaded successfully at 0x272f00000
+I> Successfully register XUSB FW context save task with MB2 loader
+I> pva-fw : oem authentication of header done
+I> strt_pg_num(62352) num_of_pgs(1) read_buf(0x2739400d8)
+I> strt_pg_num(62352) num_of_pgs(8) read_buf(0x2739400d8)
+I> pva-fw : meta-blob integrity check is success.
+I> strt_pg_num(62360) num_of_pgs(512) read_buf(0x2738000c0)
+I> pva-fw : will be decompressed at 0x273180000
+I> version 1 Bin 1 BCheckSum 0 content_size 0 Content ChkSum 1 reserved_00  0
+I> Reserved10 0 BlockMaxSize 5 Reserved11 0
+I> pva-fw : decompressed to 2156512 bytes
+I> pva-fw: plain binary integrity check is success
+I> pva-fw: Authentication Finalize Done
+I> Binary pva-fw loaded successfully at 0x273180000
+I> Successfully register PVA FW context save task with MB2 loader
+I> Task: Check MC errors
+I> Task: Carveout setup
+I> Program remaining OEM carveouts
+I> Task: Enable FSITHERM
+I> Task: Enable FSI VMON
+I> Task: Validate FSI Therm readings
+I> Task: Restore XUSB sec
+I> Task: Enable FSI SE clock
+I> Task: Initialize SBSA UART CAR
+I> Task: Initialize CPUBL Params
+I> CPUBL-params @ 0x276000000
+I> Task: Ratchet update
+W> Skip ratchet update - OPTIN fuse not set
+I> Task: Prepare eeprom data
+I> Task: FSI padctl context save
+W> Skipping FSI padctl config save: fsi not enabled
+I> Task: Unpowergate APE
+W> mb2_unpowergate_ape: skip! APE is in unpowergated state
+I> Task: Memctrl reconfig pending clients
+I> Task: OEM firewalls
+I> OEM firewalls configured
+I> Task: Powergate APE
+I> Powergating APE
+I> Powergate done
+I> Task: OEM firewall restore saved settings
+I> Task: Unhalt AUXPs
+I> Unhalting SPE..
+I> Enabling combined UART 
+\0\xFF\xFD\xFF\xE0spe: early_init
+\xFF\xB8\xFF\xE0vic initialized
+\xFF\xB8\xFF\xE0tsc initialized
+\xFF\xB8\xFF\xE0aon lic initialized
+\xFF\xB8\xFF\xE0spe: tag is 5243985d1b1eb3f06fac6d36bd7e74ac
+\xFF\xB8\xFF\xE0spe: SafeRTOS v8.4
+\xFF\xB8\xFF\xE0spe: init
+\xFF\xB8\xFF\xE0scheduler initialized
+\xFF\xB8\xFF\xE0aon hsp initialized
+\xFF\xB8\xFF\xE0tag initialized
+\xFF\xB8\xFF\xE0tcu initialized
+\xFF\xB8\xFF\xE0bpmp ipc initialized
+\xFF\xB8\xFF\xE0spe: late init
+\xFF\xB8\xFF\xE0cpu_nic clock initialized
+\xFF\xB8\xFF\xE0apb clock initialized
+\xFF\xB8\xFF\xE0pm initialized
+\xFF\xB8\xFF\xE0bpmp hsp initialized
+\xFF\xB8\xFF\xE0top1 hsp initialized
+\xFF\xB8\xFF\xE0ccplex ipc initialized
+\xFF\xB8\xFF\xE0spe: start scheduler
+\xFF\xB8\xFF\xE1
+I> Task: Trigger mailbox for PSC-BL1 exit
+I> Sending opcode 0x4d420802 to psc
+I> Received ACK from psc
+I> Task: Start secure NOR provision
+I> Skip Secure NOR provisioning
+I> Task: Trigger load FSI keyblob
+I> Task: Complete load FSI keyblob
+I> Task: MB2-PSC_FW Key Manager Init
+I> Sending opcode OP_PSC_KEY_MANAGER to psc-fw
+I> Sending opcode 0x4b45594d to psc
+\xFF\xE2
+hwwdt_init: WDT boot cfg 0x710010 sts 0x10
+bpmp: socket 0
+bpmp: base binary md5 is ac83764aab09e08198fdb2c012af5bb1
+bpmp: combined binary md5 is b86e686660a68c156e5b1b2d9392af5f
+bpmp: firmware tag is b86e686660a68c156e5b-ac83764aab0
+Write control check for CBB_CENTRAL_CBB_FIREWALL_PWM7_BLF failed, expected value: 00100008 != actual value: 0010000a address: 13a178a8
+initialized vwdt
+initialized mail_early
+initialized fuse
+initialized vfrel
+initialized adc
+fmon_populate_monitors: found 199 monitors
+initialized fmon
+initialized mc
+initialized reset
+initialized uphy_early
+initialized emc_early
+initialized pm
+465 clocks registered
+initialized clk_mach
+initialized clk_cal_early
+initialized clk_mach_early_config
+initialized io_dpd
+initialized soctherm
+initialized regime
+initialized i2c
+vrmon_dt_init: vrmon node not found
+vrmon_chk_boot_state: found 0 rail monitors
+initialized vrmon
+initialized regulator
+\xFF\xE1I> Received ACK from psc
+I> Task: Unhalt FSI
+I> FSI unhalt skipped
+I> Task: Unhalt AUXPs
+I> SCE unhalt skipped
+I> Unhalting RCE
+I> RCE unhalt successful
+I> Unhalt\xFF\xE2initialized avfs_clk_platform
+initialized powergate
+\xFF\xE1ing DCE
+I> DCE unhalt successful
+I> APE unhalt skip\xFF\xE2initialized dvs\xFF\xE5[     2.523659] Camera-FW on t234-rce-safe started
+TCU\xFF\xE2
+initialized clk_mac\xFF\xE5 early console enabled.
+\xFF\xE2h_config
+initialized suspend
+initialized strap
+initialized mce_dbell
+\xFF\xE1ped
+I> Task: Load HV/CPUBL
+I> Task: Load TOS
+I> Task: Trigger load TSEC leyblob
+I> Sending opcode 0x53535452 to psc
+I> Sent opcode \xFF\xE2initialized emc
+initialized emc_mrq
+\xFF\xE1to psc
+I> Task: Load and authen\xFF\xE2initialized clk_cal
+initialized uphy_dt
+initialized uphy_mrq
+HSIO UPHY reset has been de-asserted 0x0
+initialized uphy
+initialized pg_late
+initialized pg_mrq_init
+swdtimer_init: reg polling start w period 47 ms
+initialized swdtimer
+initialized hwwdt_late
+initialized bwmgr
+initialized thermal_host_trip
+initialized thermal_mrq
+initialized oc_mrq
+initialized reset_mrq
+initialized mail_mrq
+initialized fmon_mrq
+initialized clk_mrq
+initialized avfs_mrq
+initialized i2c_mrq
+initialized tag_mrq
+initialized bwmgr_mrq
+initialized console_mrq
+missing prod DT calibration data for 199 fmons
+initialized clk_sync_fmon_post
+\xFF\xE8
+DCE Started
+DCE_R5_Init
+MPU enabl\xFF\xE2initialized clk_cal_late
+initialized noc_late
+initialized cvc
+\xFF\xE8ed
+DCE_SW_Init
+\xFF\xE1ticate regis\xFF\xE2initialized avfs_clk_mach_post
+initialized avfs_clk_platform_post
+initialized cvc_late
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 0/2 have not matching zones 0/1
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 0/3 have not matching zone list sizes 1/3
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 0/3 have not matching zones 0/2
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 2/0 have not matching zones 1/0
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 2/3 have not matching zone list sizes 1/3
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 2/3 have not matching zones 1/2
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 3/0 have not matching zone list sizes 3/1
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 3/0 have not matching zones 2/0
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 3/2 have not matching zone list sizes 3/1
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 3/2 have not matching zones 2/1
+initialized rm
+initialized console_late
+handling unreferenced clks
+enable can1_core
+enable can1_host
+enable can2_core
+enable can2_host
+enable pwm3
+enable sdmmc4_axicif
+enable mss_encrypt
+enable maud
+enable pllg_ref
+enable dsi_core
+enable aza_2xbit
+enable xusb_ss
+enable xusb_fs
+enable xusb_falcon
+enable xusb_core_mux
+enable dsi_lp
+clk_check_max_rate: pex1_c6_core rate 500000000 > max 250000000
+clk_check_max_rate: pex2_c7_core rate 500000000 > max 250000000
+clk_check_max_rate: pex2_c8_core rate 500000000 > max 250000000
+clk_check_max_rate: pex2_c9_core rate 500000000 > max 250000000
+clk_check_max_rate: pex2_c10_core rate 500000000 > max 250000000
+clk_check_max_rate: pex0_c0_core rate 500000000 > max 250\xFF\xE5[     2.772748] Camera-FW on t234-rce-safe ready SHA1=e2238c99 (crt 12.415 ms,\xFF\xE2000000
+clk_check_max_rate: pex0_c1_core rate 500000000\xFF\xE5 total boot 262.575 m\xFF\xE2 > max 250000000
+clk_check_max_rate: pex0_c2_core rate 500000000 > max 250000\xFF\xE5s)
+\xFF\xE2000
+clk_check_max_rate: pex0_c3_core rate 500000000 > max 250000000
+clk_check_max_rate: pex0_c4_core rate 500000000 > max 250000000
+clk_check_max_rate: pex1_c5_core rate 500000000 > max 250000000
+initialized clk_mach_post
+initialized pg_post
+initialized regulator_post
+initialized profile
+initialized mrq
+initialized patrol_scrubber
+initialized cactmon
+initialized extras_post
+bpmp: init complete
+\xFF\xE1tered FWs
+\xFF\xE8Admin Task Init
+Admin Task Init complete
+Print Task Init
+RM Task Init
+SHA Task Init
+Admin Task Star\xFF\xE1I> Partition name: A_\xFF\xE8ted
+DCE SC7 SHA Enabled
+RM Task Started
+RM Task Runn\xFF\xE1cpu-bootloader
+I> Size of partition: 3670016
+I> Binary@ device:3/0 block-24832 (partition size: 0x3\xFF\xE8ing
+Print Task Started
+Print Task Running
+SHA Task Started
+SHA Task Runnin\xFF\xE180000), name: A_cpu-bootloader
+\xFF\xE8g
+DCE: FW Boot Compl\xFF\xE1I> strt_pg_num(24832)\xFF\xE8ete
+Admin Task Running
+\xFF\xE1 num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(24848) num_of_pgs(6792) read_buf(0x272000000)
+I> Partition name: A_secure-os
+I> Size of partition: 4194304
+I> Binary@ device:3/0 block-32000 (partition size: 0x400000), name: A_secure-os
+I> strt_pg_num(32000) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(32016) num_of_pgs(2560) read_buf(0xc1dc0000)
+I> MB2-params @ 0x40060000
+I> NSDRAM carveout base: 0x80000000, size: 0x1f25f0000
+I> cpubl_params: nsdram: carveout: 1, encryption: 1
+I> cpubl: Authentication Finalize Done
+I> Binary cpubl loaded successfully at 0x272000000
+I> tos: Authentication Finalize Done
+I> Binary tos loaded successfully at 0xc1dc0000
+I> Relocating OP-TEE dtb from: 0xc1eff0f0 to 0xbe040020, size: 0x2837
+I> [0] START: 0x80000000, SIZE: 0x1f25f0000
+I> [1] START: 0x276000000, SIZE: 0x2000000
+I> Setting NS memory ranges to OP-TEE dtb finished.
+I> Partition name: A_eks
+I> Size of partition: 262144
+I> Binary@ device:3/0 block-44288 (partition size: 0x40000), name: A_eks
+I> strt_pg_num(44288) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(44304) num_of_pgs(8) read_buf(0xbe020000)
+I> eks: Authentication Finalize Done
+I> Binary eks loaded successfully at 0xbe020000
+I> EKB detected (length: 0x410) @ VA:0xbe020000
+I> Task: Add cpubl params integrity check
+I> Added cpubl params digest.
+I> Task: Prepare TOS params
+I> Setting EKB blob info to OPTEE dtb finished.
+I> Setting OPTEE arg3: 0xbe040020
+I> NVRNG: Health check success
+I> NVRNG: Health check success
+I> Task: OEM SC7 context save
+I> OEM sc7 context saved
+I> Task: Disable MSS perf stats
+I> Task: Program display sticky bits
+I> Task: Storage device deinit
+I> Task: SMMU external bypass disable
+I> Task: SMMU init
+I> Task: Program GICv3 registers
+I> Task: Audit firewall settings
+I> Task: Bootchain failure check
+I> Current Boot-Chain Slot: 0
+I> BR-BCT Boot-Chain is 0, and status is 1. Set UPDATE_BRBCT bit to 0
+I> Task: Burn RESERVED_ODM0 fuse
+I> Task: Lock fusing
+I> Task: Clear dec source key
+I> MB2 finished
+
+\xFF\xE4NOTICE:  BL31: v2.8(release):8a7f432be
+NOTICE:  BL31: Built : 10:30:22, Nov 30 2023
+I/TC: 
+I/TC: Non-secure external DT found
+I/TC: OP-TEE version: 3.22 (gcc version 11.3.0 (Buildroot 2022.08)) #2 Thu Nov 30 18:39:35 UTC 2023 aarch64
+I/TC: WARNING: This OP-TEE configuration might be insecure!
+I/TC: WARNING: Please check https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
+I/TC: Primary CPU initializing
+I/TC: Test OEM keys are being used. This is insecure for shipping products!
+I/TC: Primary CPU switching to normal world boot
+\xFF\xE1
+Jetson UEFI firmware (version 36.2.0-gcid-34956989 built on 2023-11-30T18:35:35+00:00)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\xFF\xE4I/TC: Reserved shared memory is disabled
+I/TC: Dynamic shared memory is enabled
+I/TC: Normal World virtualization support is disabled
+I/TC: Asynchronous notifications are disabled
+\xFF\xE1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\xFF\xE5[     5.032795] Camera-FW on t234-rce-safe started
+TCU early console enabled.
+\xFF\xE1
+
+
+
+
+
+
+
+
+\xFF\xE5[     5.128110] Camera-FW on t234-rce-safe ready SHA1=e2238c99 (crt 1.401 ms, total boot 96.822 ms)
+\xFF\xE1
+\xFF\xE4E/TC:?? 00 get_rpc_alloc_res:645 RPC allocation failed. Non-secure world result: ret=0xffff0000 ret_origin=0
+E/LD:   init_elf:486 sys_open_ta_bin(bc50d971-d4c9-42c4-82cb-343fb7f37896)
+E/TC:?? 00 ldelf_init_with_ldelf:131 ldelf failed with res: 0xffff000c
+\xFF\xE1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\x1B[2J\x1B[04D\x1B[=3h\x1B[2J\x1B[09D
+
+
+
+
+
+
+
+
+
+
+
+
+
+ASSERT [XhciDxe] /out/nvidia/bootloader/uefi/Jetson_RELEASE/edk2/MdeModulePkg/Bus/Pci/XhciDxe/Xhci.c(2078): !((((BOOLEAN)(((XhcReadOpReg ((Xhc), (0x0004))) & ((0x00000800))) == ((0x00000800))))))
+
+Resetting the system in 5 seconds.
+\xFF\xE4\xFF\xE2Shutdown state requested 1
+Rebooting system ...
+\0\xFF\xE2
+[0000.064] I> MB1 (version: 1.4.0.1-t234-54845784-08e631ca)
+[0000.069] I> t234-A01-1-Silicon (0x12347) Prod
+[0000.073] I> Boot-mode : Coldboot
+[0000.076] I> Entry timestamp: 0x00000000
+[0000.080] I> last_boot_error: 0x0
+[0000.083] I> BR-BCT: preprod_dev_sign: 0
+[0000.087] I> rst_source: 0xb, rst_level: 0x1
+[0000.091] I> Task: SE error check
+[0000.094] I> Task: Bootchain select WAR set
+[0000.098] I> Task: Enable SLCG
+[0000.101] I> Task: CRC check
+[0000.104] I> Task: Initialize MB2 params
+[0000.108] I> MB2-params @ 0x40060000
+[0000.112] I> Task: Crypto init
+[0000.115] I> Task: Perform MB1 KAT tests
+[0000.119] I> Task: NVRNG health check
+[0000.122] I> NVRNG: Health check success
+[0000.126] I> Task: MSS Bandwidth limiter settings for iGPU clients
+[0000.132] I> Task: Enabling and initialization of Bandwidth limiter
+[0000.138] I> No request to configure MBWT settings for any PC!
+[0000.144] I> Task: Secure debug controls
+[0000.148] I> Task: strap war set
+[0000.151] I> Task: Initialize SOC Therm
+[0000.154] I> Task: Program NV master stream id
+[0000.159] I> Task: Verify boot mode
+[0000.164] I> Task: Alias fuses
+[0000.168] W> FUSE_ALIAS: Fuse alias on production fused part is not supported.
+[0000.175] I> Task: Print SKU type
+[0000.178] I> FUSE_OPT_CCPLEX_CLUSTER_DISABLE = 0x000001c8
+[0000.183] I> FUSE_OPT_GPC_DISABLE = 0x00000002
+[0000.188] I> FUSE_OPT_TPC_DISABLE = 0x000000f0
+[0000.192] I> FUSE_OPT_DLA_DISABLE = 0x00000003
+[0000.196] I> FUSE_OPT_PVA_DISABLE = 0x00000001
+[0000.201] I> FUSE_OPT_NVENC_DISABLE = 0x00000001
+[0000.205] I> FUSE_OPT_NVDEC_DISABLE = 0x00000000
+[0000.209] I> FUSE_OPT_FSI_DISABLE = 0x00000001
+[0000.214] I> FUSE_OPT_EMC_DISABLE = 0x0000000c
+[0000.218] I> FUSE_BOOTROM_PATCH_VERSION = 0x7
+[0000.222] I> FUSE_PSCROM_PATCH_VERSION = 0x7
+[0000.226] I> FUSE_OPT_ADC_CAL_FUSE_REV = 0x2
+[0000.230] I> FUSE_SKU_INFO_0 = 0xd5
+[0000.234] I> FUSE_OPT_SAMPLE_TYPE_0 = 0x3 PS 
+[0000.238] I> FUSE_PACKAGE_INFO_0 = 0x2
+[0000.242] I> SKU: Prod
+[0000.244] I> Task: Boost clocks
+[0000.247] I> Initializing NAFLL for BPMP_CPU_NIC.
+[0000.252] I> BPMP NAFLL: fll_lock = 1, dvco_min_reached = 0
+[0000.257] I> BPMP NAFLL lock success.
+[0000.261] I> BPMP_CPU_NIC : src = 42, divisor = 0
+[0000.265] I> Initializing PLLC2 for AXI_CBB.
+[0000.269] I> AXI_CBB : src = 35, divisor = 0
+[0000.274] I> Task: Voltage monitor
+[0000.277] I> VMON: Vmon re-calibration and fine tuning done
+[0000.282] I> Task: UPHY init
+[0000.287] I> HSIO UPHY init done
+[0000.290] W> Skipping GBE UPHY config
+[0000.294] I> Task: Boot device init
+[0000.297] I> Boot_device: QSPI_FLASH instance: 0
+[0000.302] I> Qspi clock source : pllc_out0
+[0000.306] I> QSPI Flash: Macronix 64MB
+[0000.309] I> QSPI-0l initialized successfully
+[0000.314] I> Task: TSC init
+[0000.316] I> Task: Load membct
+[0000.319] I> RAM_CODE 0x4000421
+[0000.322] I> Loading MEMBCT 
+[0000.325] I> Slot: 1
+[0000.327] I> Binary[0] block-66816 (partition size: 0x40000)
+[0000.333] I> Binary name: MEM-BCT-0
+[0000.336] I> Size of crypto header is 8192
+[0000.340] I> Size of crypto header is 8192
+[0000.344] I> strt_pg_num(66816) num_of_pgs(16) read_buf(0x40050000)
+[0000.350] I> BCH of MEM-BCT-0 read from storage
+[0000.355] I> BCH address is : 0x40050000
+[0000.358] I> MEM-BCT-0 header integrity check is success
+[0000.364] I> Binary magic in BCH component 0 is MEM0
+[0000.368] I> component binary type is 0
+[0000.372] I> strt_pg_num(66832) num_of_pgs(115) read_buf(0x40040000)
+[0000.379] I> MEM-BCT-0 binary is read from storage
+[0000.384] I> MEM-BCT-0 binary integrity check is success
+[0000.389] I> Binary MEM-BCT-0 loaded successfully at 0x40040000 (0xe580)
+[0000.396] I> RAM_CODE 0x4000421
+[0000.401] I> RAM_CODE 0x4000421
+[0000.405] I> Task: Load Page retirement list
+[0000.409] I> Task: SDRAM params override
+[0000.413] I> Task: Save mem-bct info
+[0000.416] I> Task: Carveout allocate
+[0000.420] I> RCM blob carveout will not be allocated
+[0000.425] I> Update CCPLEX IST carveout from MB1-BCT
+[0000.429] I> ECC region[0]: Start:0x0, End:0x0
+[0000.434] I> ECC region[1]: Start:0x0, End:0x0
+[0000.438] I> ECC region[2]: Start:0x0, End:0x0
+[0000.442] I> ECC region[3]: Start:0x0, End:0x0
+[0000.446] I> ECC region[4]: Start:0x0, End:0x0
+[0000.451] I> Non-ECC region[0]: Start:0x80000000, End:0x280000000
+[0000.457] I> Non-ECC region[1]: Start:0x0, End:0x0
+[0000.461] I> Non-ECC region[2]: Start:0x0, End:0x0
+[0000.466] I> Non-ECC region[3]: Start:0x0, End:0x0
+[0000.471] I> Non-ECC region[4]: Start:0x0, End:0x0
+[0000.481] I> allocated(CO:43) base:0xbe000000 size:0x4000000 align: 0x200000
+[0000.488] I> allocated(CO:39) base:0x27de00000 size:0x2200000 align: 0x10000
+[0000.495] I> allocated(CO:20) base:0x27a000000 size:0x2000000 align: 0x2000000
+[0000.502] I> allocated(CO:24) base:0x278000000 size:0x2000000 align: 0x2000000
+[0000.509] I> allocated(CO:28) base:0x276000000 size:0x2000000 align: 0x2000000
+[0000.516] I> allocated(CO:22) base:0x27c000000 size:0x1000000 align: 0x1000000
+[0000.524] I> allocated(CO:35) base:0x275000000 size:0x1000000 align: 0x100000
+[0000.531] I> allocated(CO:02) base:0x27d000000 size:0x800000 align: 0x800000
+[0000.538] I> allocated(CO:03) base:0x274800000 size:0x800000 align: 0x800000
+[0000.544] I> allocated(CO:06) base:0x274000000 size:0x800000 align: 0x800000
+[0000.551] I> allocated(CO:56) base:0x273800000 size:0x800000 align: 0x200000
+[0000.558] I> allocated(CO:07) base:0x27d800000 size:0x400000 align: 0x400000
+[0000.565] I> allocated(CO:33) base:0x273400000 size:0x400000 align: 0x200000
+[0000.572] I> allocated(CO:19) base:0x273180000 size:0x280000 align: 0x10000
+[0000.579] I> allocated(CO:23) base:0x27dc00000 size:0x200000 align: 0x200000
+[0000.586] I> allocated(CO:01) base:0x273000000 size:0x100000 align: 0x100000
+[0000.593] I> allocated(CO:05) base:0x272f00000 size:0x100000 align: 0x100000
+[0000.600] I> allocated(CO:08) base:0x272e00000 size:0x100000 align: 0x100000
+[0000.607] I> allocated(CO:09) base:0x272d00000 size:0x100000 align: 0x100000
+[0000.614] I> allocated(CO:12) base:0x272c00000 size:0x100000 align: 0x100000
+[0000.621] I> allocated(CO:15) base:0x272b00000 size:0x100000 align: 0x100000
+[0000.628] I> allocated(CO:17) base:0x272a00000 size:0x100000 align: 0x100000
+[0000.635] I> allocated(CO:27) base:0x272900000 size:0x100000 align: 0x100000
+[0000.642] I> allocated(CO:42) base:0x272800000 size:0x100000 align: 0x100000
+[0000.648] I> allocated(CO:54) base:0x273100000 size:0x80000 align: 0x80000
+[0000.655] I> allocated(CO:34) base:0x2727f0000 size:0x10000 align: 0x10000
+[0000.662] I> allocated(CO:72) base:0x2725f0000 size:0x200000 align: 0x10000
+[0000.669] I> allocated(CO:47) base:0x272000000 size:0x400000 align: 0x200000
+[0000.676] I> allocated(CO:50) base:0x271e00000 size:0x200000 align: 0x100000
+[0000.683] I> allocated(CO:48) base:0x2725d0000 size:0x20000 align: 0x10000
+[0000.689] I> allocated(CO:69) base:0x2725b0000 size:0x20000 align: 0x10000
+[0000.696] I> allocated(CO:49) base:0x2725a0000 size:0x10000 align: 0x10000
+[0000.703] I> NSDRAM base: 0x80000000, end: 0x2725f0000, size: 0x1f25f0000
+[0000.710] I> Task: Thermal check
+[0000.713] I> max_chip_limit = 105
+[0000.716] I> min_chip_limit = -28
+[0000.719] I> max temp read = 35
+[0000.722] I> min temp read = 34
+[0000.725] I> Task: Update FSI SCR with thermal fuse data
+[0000.730] I> Task: Enable WDT 5th expiry
+[0000.734] I> Task: I2C register
+[0000.737] I> Task: Set I2C bus freq
+[0000.740] I> Task: Reset FSI
+[0000.743] I> Task: Pinmux init
+[0000.746] I> skipped mmio_addr = 0x9240008
+[0000.750] I> skipped mmio_addr = 0x9240000
+[0000.754] I> skipped mmio_addr = 0x9240010
+[0000.758] I> skipped mmio_addr = 0x9240018
+[0000.762] I> skipped mmio_addr = 0x9240020
+[0000.766] I> skipped mmio_addr = 0x9240030
+[0000.770] I> skipped mmio_addr = 0x9240028
+[0000.774] I> skipped mmio_addr = 0x9240038
+[0000.778] I> skipped mmio_addr = 0x9240040
+[0000.782] I> skipped mmio_addr = 0x9240048
+[0000.786] I> skipped mmio_addr = 0x9241000
+[0000.790] I> skipped mmio_addr = 0x9241008
+[0000.793] I> skipped mmio_addr = 0x9241010
+[0000.797] I> skipped mmio_addr = 0x9241018
+[0000.801] I> skipped mmio_addr = 0x9241020
+[0000.805] I> skipped mmio_addr = 0x9241028
+[0000.809] I> skipped mmio_addr = 0x9241030
+[0000.813] I> skipped mmio_addr = 0x9241038
+[0000.817] I> skipped mmio_addr = 0x9241040
+[0000.821] I> skipped mmio_addr = 0x9242000
+[0000.825] I> skipped mmio_addr = 0x9242008
+[0000.829] I> Task: Prod config init
+[0000.832] I> Task: Pad voltage init
+[0000.836] I> Task: Prod init
+[0000.838] I> Task: Program rst req config reg
+[0000.843] I> Task: Common rail init
+[0000.846] I> DONE: Thermal config
+[0000.850] W> DEVICE_PROD: module = 13, instance = 4 not found in device prod.
+[0000.858] I> DONE: SOC rail config
+[0000.862] W> PMIC_CONFIG: Rail: MEMIO rail config not found in MB1 BCT.
+[0000.868] I> DONE: MEMIO rail config
+[0000.872] W> PMIC_CONFIG: Rail: GPU rail info not found in MB1 BCT.
+[0000.879] I> DONE: GPU rail info
+[0000.882] W> PMIC_CONFIG: Rail: CV rail info not found in MB1 BCT.
+[0000.888] I> DONE: CV rail info
+[0000.891] I> Task: Mem clock src
+[0000.894] I> Task: Misc. board config
+[0000.898] I> PMIC_CONFIG: Platform config not found in MB1 BCT.
+[0000.904] I> Task: SDRAM init
+[0000.907] I> MemoryType: 4 MemBctRevision: 1
+[0000.913] I> MSS CAR: PLLM/HUB programming for MemoryType: 4 and MemBctRevision: 1
+[0000.921] I> MSS CAR: Init PLLM
+[0000.924] I> MSS CAR: Init PLLHUB
+[0000.929] I> Encryption:   MTS: en, TX: en, VPR: en, GSC: en
+[0000.940] I> SDRAM initialized!
+[0000.943] I> SDRAM Size in Total 0x200000000
+[0000.947] I> Task: Dram Ecc scrub
+[0000.950] I> Task: DRAM alias check
+[0000.957] I> Task: Program NSDRAM carveout
+[0000.961] I> NSDRAM carveout encryption is enabled
+[0000.965] I> Program NSDRAM carveout
+[0000.969] I> Task: Register checker
+[0000.972] I> Task: Enable clock-mon
+[0000.976] I> FMON: Fmon re-programming done
+[0000.980] I> Task: Mapper init
+[0000.983] I> Task: SC7 Context Init
+[0000.987] I> Task: CCPLEX IST init
+[0000.990] I> Task: CPU WP0
+[0000.993] I> Loading MCE
+[0000.995] I> Slot: 1
+[0000.997] I> Binary[8] block-85760 (partition size: 0x80000)
+[0001.002] I> Binary name: MCE
+[0001.005] I> Size of crypto header is 8192
+[0001.009] I> Size of crypto header is 8192
+[0001.013] I> strt_pg_num(85760) num_of_pgs(16) read_buf(0x4003e000)
+[0001.019] I> BCH of MCE read from storage
+[0001.023] I> BCH address is : 0x4003e000
+[0001.027] I> MCE header integrity check is success
+[0001.032] I> Binary magic in BCH component 0 is MTSM
+[0001.037] I> component binary type is 8
+[0001.040] I> Size of crypto header is 8192
+[0001.044] I> strt_pg_num(85776) num_of_pgs(350) read_buf(0x40000000)
+[0001.052] I> MCE binary is read from storage
+[0001.057] I> MCE binary integrity check is success
+[0001.062] I> Binary MCE loaded successfully at 0x40000000 (0x2baf0)
+[0001.068] I> Size of crypto header is 8192
+[0001.079] I> Size of crypto header is 8192
+[0001.083] I> Sending WP0 mailbox command to PSC
+[0001.092] I> Task: XUSB Powergate
+[0001.095] I> Skipping powergate XUSB.
+[0001.098] I> Task: MB1 fixed firewalls
+[0001.105] W> Firewall readback mismatch
+[0001.110] I> Task: Load bpmp-fw
+[0001.113] I> Slot: 1
+[0001.115] I> Binary[15] block-72960 (partition size: 0x180000)
+[0001.121] I> Binary name: BPMP_FW
+[0001.124] I> Size of crypto header is 8192
+[0001.128] I> Size of crypto header is 8192
+[0001.132] I> strt_pg_num(72960) num_of_pgs(16) read_buf(0x807fe000)
+[0001.138] I> BCH of BPMP_FW read from storage
+[0001.142] I> BCH address is : 0x807fe000
+[0001.146] I> BPMP_FW header integrity check is success
+[0001.151] I> Binary magic in BCH component 0 is BPMF
+[0001.156] I> component binary type is 15
+[0001.159] I> Size of crypto header is 8192
+[0001.163] I> strt_pg_num(72976) num_of_pgs(2017) read_buf(0x80000000)
+[0001.181] I> BPMP_FW binary is read from storage
+[0001.187] I> BPMP_FW binary integrity check is success
+[0001.192] I> Binary BPMP_FW loaded successfully at 0x80000000 (0xfc080)
+[0001.199] I> Slot: 1
+[0001.201] I> Binary[16] block-76032 (partition size: 0x400000)
+[0001.207] I> Binary name: BPMP_FW_DTB
+[0001.210] I> Size of crypto header is 8192
+[0001.214] I> Size of crypto header is 8192
+[0001.218] I> strt_pg_num(76032) num_of_pgs(16) read_buf(0x807fc000)
+[0001.224] I> BCH of BPMP_FW_DTB read from storage
+[0001.229] I> BCH address is : 0x807fc000
+[0001.233] I> BPMP_FW_DTB header integrity check is success
+[0001.238] I> Binary magic in BCH component 0 is BPMD
+[0001.243] I> component binary type is 16
+[0001.246] I> Size of crypto header is 8192
+[0001.250] I> strt_pg_num(76048) num_of_pgs(384) read_buf(0x807cbff0)
+[0001.259] I> BPMP_FW_DTB binary is read from storage
+[0001.264] I> BPMP_FW_DTB binary integrity check is success
+[0001.269] I> Binary BPMP_FW_DTB loaded successfully at 0x807cbff0 (0x2ff80)
+[0001.276] I> Task: BPMP fw ast config
+[0001.280] I> Task: Load psc-fw
+[0001.283] I> Slot: 1
+[0001.285] I> Binary[17] block-84224 (partition size: 0xc0000)
+[0001.290] I> Binary name: PSC_FW
+[0001.293] I> Size of crypto header is 8192
+[0001.297] I> Size of crypto header is 8192
+[0001.301] I> strt_pg_num(84224) num_of_pgs(16) read_buf(0x80ffe000)
+[0001.307] I> BCH of PSC_FW read from storage
+[0001.312] I> BCH address is : 0x80ffe000
+[0001.315] I> PSC_FW header integrity check is success
+[0001.320] I> Binary magic in BCH component 0 is PFWP
+[0001.325] I> component binary type is 17
+[0001.329] I> Size of crypto header is 8192
+[0001.333] I> strt_pg_num(84240) num_of_pgs(591) read_buf(0x80fb4200)
+[0001.342] I> PSC_FW binary is read from storage
+[0001.347] I> PSC_FW binary integrity check is success
+[0001.352] I> Binary PSC_FW loaded successfully at 0x80fb4200 (0x49df0)
+[0001.359] I> Task: Load nvdec-fw
+[0001.362] I> Slot: 1
+[0001.364] I> Binary[7] block-69376 (partition size: 0x100000)
+[0001.369] I> Binary name: NVDEC
+[0001.372] I> Size of crypto header is 8192
+[0001.376] I> Size of crypto header is 8192
+[0001.380] I> strt_pg_num(69376) num_of_pgs(16) read_buf(0x800fe000)
+[0001.386] I> BCH of NVDEC read from storage
+[0001.390] I> BCH address is : 0x800fe000
+[0001.394] I> NVDEC header integrity check is success
+[0001.399] I> Binary magic in BCH component 0 is NDEC
+[0001.404] I> component binary type is 7
+[0001.408] I> Size of crypto header is 8192
+[0001.411] I> strt_pg_num(69392) num_of_pgs(560) read_buf(0x80000000)
+[0001.421] I> NVDEC binary is read from storage
+[0001.426] I> NVDEC binary integrity check is success
+[0001.431] I> Binary NVDEC loaded successfully at 0x80000000 (0x46000)
+[0001.437] I> Size of crypto header is 8192
+[0001.448] I> Task: Load tsec-fw
+[0001.451] I> TSEC-FW load support not enabled
+[0001.455] I> Task: GPIO interrupt map
+[0001.459] I> Task: SC7 context save
+[0001.462] I> Slot: 1
+[0001.464] I> Binary[27] block-0 (partition size: 0x100000)
+[0001.470] I> Binary name: BR_BCT
+[0001.473] I> Size of crypto header is 8192
+[0001.477] I> Size of crypto header is 8192
+[0001.481] I> Size of crypto header is 8192
+[0001.485] I> strt_pg_num(0) num_of_pgs(16) read_buf(0xa0000000)
+[0001.491] I> BR_BCT binary is read from storage
+[0001.495] I> BR_BCT binary integrity check is success
+[0001.500] I> Binary BR_BCT loaded successfully at 0xa0000000 (0x2000)
+[0001.506] I> Slot: 1
+[0001.508] I> Binary[13] block-86784 (partition size: 0x30000)
+[0001.514] I> Binary name: SC7-FW
+[0001.517] I> Size of crypto header is 8192
+[0001.521] I> Size of crypto header is 8192
+[0001.525] I> Size of crypto header is 8192
+[0001.529] I> Size of crypto header is 8192
+[0001.533] I> strt_pg_num(86784) num_of_pgs(16) read_buf(0xa0002000)
+[0001.539] I> BCH of SC7-FW read from storage
+[0001.543] I> BCH address is : 0xa0002000
+[0001.547] I> SC7-FW header integrity check is success
+[0001.552] I> Binary magic in BCH component 0 is WB0B
+[0001.556] I> component binary type is 13
+[0001.560] I> Size of crypto header is 8192
+[0001.564] I> strt_pg_num(86800) num_of_pgs(347) read_buf(0xa0004000)
+[0001.572] I> SC7-FW binary is read from storage
+[0001.577] I> SC7-FW binary integrity check is success
+[0001.582] I> Binary SC7-FW loaded successfully at 0xa0004000 (0x2b440)
+[0001.588] I> Slot: 1
+[0001.590] I> Binary[22] block-87168 (partition size: 0x30000)
+[0001.596] I> Binary name: PSC_RF
+[0001.599] I> Size of crypto header is 8192
+[0001.603] I> Size of crypto header is 8192
+[0001.607] I> Size of crypto header is 8192
+[0001.611] I> Size of crypto header is 8192
+[0001.615] I> strt_pg_num(87168) num_of_pgs(16) read_buf(0xa002f440)
+[0001.621] I> BCH of PSC_RF read from storage
+[0001.625] I> BCH address is : 0xa002f440
+[0001.629] I> PSC_RF header integrity check is success
+[0001.634] I> Binary magic in BCH component 0 is PSCR
+[0001.639] I> component binary type is 22
+[0001.642] I> Size of crypto header is 8192
+[0001.646] I> strt_pg_num(87184) num_of_pgs(224) read_buf(0xa0031440)
+[0001.654] I> PSC_RF binary is read from storage
+[0001.659] I> PSC_RF binary integrity check is success
+[0001.663] I> Binary PSC_RF loaded successfully at 0xa0031440 (0x1be60)
+[0001.673] I> Task: Save WP0 payload to SC7 ctx
+[0001.677] I> Task: Load MB2rf binary to SC7 ctx
+[0001.681] I> Slot: 1
+[0001.683] I> Binary[14] block-87552 (partition size: 0x20000)
+[0001.689] I> Binary name: MB2_RF
+[0001.692] I> Size of crypto header is 8192
+[0001.696] I> Size of crypto header is 8192
+[0001.700] I> Size of crypto header is 8192
+[0001.704] I> Size of crypto header is 8192
+[0001.708] I> strt_pg_num(87552) num_of_pgs(16) read_buf(0xa00d5d10)
+[0001.714] I> BCH of MB2_RF read from storage
+[0001.718] I> BCH address is : 0xa00d5d10
+[0001.722] I> MB2_RF header integrity check is success
+[0001.727] I> Binary magic in BCH component 0 is MB2R
+[0001.732] I> component binary type is 14
+[0001.736] I> Size of crypto header is 8192
+[0001.739] I> strt_pg_num(87568) num_of_pgs(223) read_buf(0xa00d7d10)
+[0001.747] I> MB2_RF binary is read from storage
+[0001.752] I> MB2_RF binary integrity check is success
+[0001.756] I> Binary MB2_RF loaded successfully at 0xa00d7d10 (0x1bd90)
+[0001.763] I> Task: Save fuse alias data to SC7 ctx
+[0001.768] I> Task: Save PMIC data to SC7 ctx
+[0001.772] I> Task: Save Pinmux data to SC7 ctx
+[0001.776] I> Task: Save Pad Voltage data to SC7 ctx
+[0001.781] I> Task: Save controller prod data to SC7 ctx
+[0001.786] I> Task: Save prod cfg data to SC7 ctx
+[0001.790] I> Task: Save I2C bus freq data to SC7 ctx
+[0001.795] I> Task: Save SOCTherm data to SC7 ctx
+[0001.799] I> Task: Save FMON data to SC7 ctx
+[0001.804] I> Task: Save VMON data to SC7 ctx
+[0001.808] I> Task: Save TZDRAM data to SC7 ctx
+[0001.812] I> Task: Save GPIO int data to SC7 ctx
+[0001.816] I> Task: Save clock data to SC7 ctx
+[0001.821] I> Task: Save debug data to SC7 ctx
+[0001.825] I> Task: Save MBWT data to SC7 ctx
+[0001.833] I> SC7 context save done
+[0001.836] I> Task: Load MB2/Applet/FSKP
+[0001.840] I> Loading MB2
+[0001.842] I> Slot: 1
+[0001.844] I> Binary[6] block-71424 (partition size: 0x80000)
+[0001.850] I> Binary name: MB2
+[0001.852] I> Size of crypto header is 8192
+[0001.856] I> Size of crypto header is 8192
+[0001.860] I> strt_pg_num(71424) num_of_pgs(16) read_buf(0x8007e000)
+[0001.867] I> BCH of MB2 read from storage
+[0001.870] I> BCH address is : 0x8007e000
+[0001.874] I> MB2 header integrity check is success
+[0001.879] I> Binary magic in BCH component 0 is MB2B
+[0001.884] I> component binary type is 6
+[0001.887] I> Size of crypto header is 8192
+[0001.891] I> strt_pg_num(71440) num_of_pgs(845) read_buf(0x80000000)
+[0001.902] I> MB2 binary is read from storage
+[0001.907] I> MB2 binary integrity check is success
+[0001.912] I> Binary MB2 loaded successfully at 0x80000000 (0x69900)
+[0001.918] I> Task: Map CCPLEX SHARED carveout
+[0001.922] I> Task: Prepare MB2 params
+[0001.926] I> Task: Dram ecc test
+[0001.929] I> Task: Misc NV security settings
+[0001.933] I> NVDEC sticky bits programming done
+[0001.938] I> Successfully powergated NVDEC
+[0001.942] I> Task: Disable/Reload WDT
+[0001.945] I> Task: Program misc carveouts
+[0001.949] I> Program IPC carveouts
+[0001.953] I> Task: Disable SCPM/POD reset
+[0001.956] I> SLCG Global override status := 0x0
+[0001.961] I> MB1: MSS reconfig completed
+I> MB2 (version: 0.0.0.0-t234-54845784-c6a05a9f)
+I> t234-A01-1-Silicon (0x12347)
+I> Boot-mode : Coldboot
+I> Emulation: 
+I> Entry timestamp: 0x001e5f24
+I> Regular heap: [base:0x40040000, size:0x10000]
+I> DMA heap: [base:0x273800000, size:0x800000]
+I> Task: SE error check
+I> Task: Crypto init
+I> Task: MB2 Params integrity check
+I> Task: ARI update carveout TZDRAM
+I> Task: Configure OEM set LA/PTSA values
+I> Task: Check MC errors
+I> Task: Enable hot-plug capability
+I> Task: PSC mailbox init
+I> Task: Enable clock for external modules
+I> Task: OEM SC7 context save init
+I> Task: I2C register
+I> Task: Map CCPLEX_INTERWORLD_SHMEM carveout
+I> Task: Program CBB PCIE AMAP regions
+I> Task: Boot device init
+I> Boot_device: QSPI_FLASH instance: 0
+I> Qspi clock source : pllc_out0
+I> QSPI Flash: Macronix 64MB
+I> QSPI-0l initialized successfully
+I> Secondary storage device: QSPI_FLASH instance: 0
+I> Task: Partition Manager Init
+I> strt_pg_num(130592) num_of_pgs(1) read_buf(0x273801000)
+I> strt_pg_num(130560) num_of_pgs(32) read_buf(0x273801200)
+I> Found 60 partitions in QSPI_FLASH (instance 0)
+I> Task: Pass DRAM ECC PRL Flag to FSI
+I> Task: Load and authenticate registered FWs
+I> Task: Load AUXP FWs
+I> Successfully register SPE FW load task with MB2 loader
+I> Skipping SCE FW load
+I> Successfully register RCE FW load task with MB2 loader
+I> Successfully register DCE FW load task with MB2 loader
+I> Unpowergating APE
+I> Unpowergate done
+I> Successfully register APE FW load task with MB2 loader
+I> Skipping FSI FW load
+I> Successfully register XUSB FW load task with MB2 loader
+I> Successfully register PVA FW load task with MB2 loader
+I> Partition name: B_spe-fw
+I> Size of partition: 589824
+I> Binary@ device:3/0 block-118016 (partition size: 0x90000), name: B_spe-fw
+I> strt_pg_num(118016) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(118032) num_of_pgs(512) read_buf(0x272e00000)
+I> Partition name: B_rce-fw
+I> Size of partition: 1048576
+I> Binary@ device:3/0 block-119168 (partition size: 0x100000), name: B_rce-fw
+I> strt_pg_num(119168) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(119184) num_of_pgs(880) read_buf(0x272a00000)
+I> spe: Authentication Finalize Done
+I> Binary spe loaded successfully at 0x272e00000
+I> Partition name: B_dce-fw
+I> Size of partition: 5242880
+I> Binary@ device:3/0 block-107776 (partition size: 0x500000), name: B_dce-fw
+I> strt_pg_num(107776) num_of_pgs(16) read_buf(0x40066650)
+I> rce: Authentication Finalize Done
+I> Binary rce loaded successfully at 0x272a00000
+I> Successfully register RCE FW context save task with MB2 loader
+I> dce : oem authentication of header done
+I> strt_pg_num(107792) num_of_pgs(1) read_buf(0x2739400d8)
+I> strt_pg_num(107792) num_of_pgs(8) read_buf(0x2739400d8)
+I> dce : meta-blob integrity check is success.
+I> strt_pg_num(107800) num_of_pgs(512) read_buf(0x2738000c0)
+I> strt_pg_num(108312) num_of_pgs(512) read_buf(0x2738400c0)
+I> dce : will be decompressed at 0x27a000000
+I> version 1 Bin 1 BCheckSum 0 content_size 0 Content ChkSum 1 reserved_00  0
+I> Reserved10 0 BlockMaxSize 5 Reserved11 0
+I> strt_pg_num(108824) num_of_pgs(512) read_buf(0x2738800c0)
+I> dce : decompressed to 12075136 bytes
+I> dce: plain binary integrity check is success
+I> Partition name: B_adsp-fw
+I> Size of partition: 2097152
+I> Binary@ device:3/0 block-121216 (partition size: 0x200000), name: B_adsp-fw
+I> strt_pg_num(121216) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(121232) num_of_pgs(800) read_buf(0x27d800000)
+I> dce: Authentication Finalize Done
+I> Binary dce loaded successfully at 0x27a000000
+I> Partition name: B_xusb-fw
+I> Size of partition: 262144
+I> Binary@ device:3/0 block-72448 (partition size: 0x40000), name: B_xusb-fw
+I> strt_pg_num(72448) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(72464) num_of_pgs(312) read_buf(0x272f00000)
+I> ape: Authentication Finalize Done
+I> Binary ape loaded successfully at 0x27d800000
+I> Successfully register APE FW context save task with MB2 loader
+I> Partition name: B_pva-fw
+I> Size of partition: 262144
+I> Binary@ device:3/0 block-125312 (partition size: 0x40000), name: B_pva-fw
+I> strt_pg_num(125312) num_of_pgs(16) read_buf(0x40066650)
+I> xusb: Authentication Finalize Done
+I> Binary xusb loaded successfully at 0x272f00000
+I> Successfully register XUSB FW context save task with MB2 loader
+I> pva-fw : oem authentication of header done
+I> strt_pg_num(125328) num_of_pgs(1) read_buf(0x2739400d8)
+I> strt_pg_num(125328) num_of_pgs(8) read_buf(0x2739400d8)
+I> pva-fw : meta-blob integrity check is success.
+I> strt_pg_num(125336) num_of_pgs(512) read_buf(0x2738000c0)
+I> pva-fw : will be decompressed at 0x273180000
+I> version 1 Bin 1 BCheckSum 0 content_size 0 Content ChkSum 1 reserved_00  0
+I> Reserved10 0 BlockMaxSize 5 Reserved11 0
+I> pva-fw : decompressed to 2156512 bytes
+I> pva-fw: plain binary integrity check is success
+I> pva-fw: Authentication Finalize Done
+I> Binary pva-fw loaded successfully at 0x273180000
+I> Successfully register PVA FW context save task with MB2 loader
+I> Task: Check MC errors
+I> Task: Carveout setup
+I> Program remaining OEM carveouts
+I> Task: Enable FSITHERM
+I> Task: Enable FSI VMON
+I> Task: Validate FSI Therm readings
+I> Task: Restore XUSB sec
+I> Task: Enable FSI SE clock
+I> Task: Initialize SBSA UART CAR
+I> Task: Initialize CPUBL Params
+I> CPUBL-params @ 0x276000000
+I> Task: Ratchet update
+W> Skip ratchet update - OPTIN fuse not set
+I> Task: Prepare eeprom data
+I> Task: FSI padctl context save
+W> Skipping FSI padctl config save: fsi not enabled
+I> Task: Unpowergate APE
+W> mb2_unpowergate_ape: skip! APE is in unpowergated state
+I> Task: Memctrl reconfig pending clients
+I> Task: OEM firewalls
+I> OEM firewalls configured
+I> Task: Powergate APE
+I> Powergating APE
+I> Powergate done
+I> Task: OEM firewall restore saved settings
+I> Task: Unhalt AUXPs
+I> Unhalting SPE..
+I> Enabling combined UART 
+\0\xFF\xFD\xFF\xE0spe: early_init
+\xFF\xB8\xFF\xE0vic initialized
+\xFF\xB8\xFF\xE0tsc initialized
+\xFF\xB8\xFF\xE0aon lic initialized
+\xFF\xB8\xFF\xE0spe: tag is 5243985d1b1eb3f06fac6d36bd7e74ac
+\xFF\xB8\xFF\xE0spe: SafeRTOS v8.4
+\xFF\xB8\xFF\xE0spe: init
+\xFF\xB8\xFF\xE0scheduler initialized
+\xFF\xB8\xFF\xE0aon hsp initialized
+\xFF\xB8\xFF\xE0tag initialized
+\xFF\xB8\xFF\xE0tcu initialized
+\xFF\xB8\xFF\xE0bpmp ipc initialized
+\xFF\xB8\xFF\xE0spe: late init
+\xFF\xB8\xFF\xE0cpu_nic clock initialized
+\xFF\xB8\xFF\xE0apb clock initialized
+\xFF\xB8\xFF\xE0pm initialized
+\xFF\xB8\xFF\xE0bpmp hsp initialized
+\xFF\xB8\xFF\xE0top1 hsp initialized
+\xFF\xB8\xFF\xE0ccplex ipc initialized
+\xFF\xB8\xFF\xE0spe: start scheduler
+\xFF\xB8\xFF\xE1
+I> Task: Trigger mailbox for PSC-BL1 exit
+I> Sending opcode 0x4d420802 to psc
+I> Received ACK from psc
+I> Task: Start secure NOR provision
+I> Skip Secure NOR provisioning
+I> Task: Trigger load FSI keyblob
+I> Task: Complete load FSI keyblob
+I> Task: MB2-PSC_FW Key Manager Init
+I> Sending opcode OP_PSC_KEY_MANAGER to psc-fw
+I> Sending opcode 0x4b45594d to psc
+\xFF\xE2
+hwwdt_init: WDT boot cfg 0x710010 sts 0x10
+bpmp: socket 0
+bpmp: base binary md5 is ac83764aab09e08198fdb2c012af5bb1
+bpmp: combined binary md5 is b86e686660a68c156e5b1b2d9392af5f
+bpmp: firmware tag is b86e686660a68c156e5b-ac83764aab0
+Write control check for CBB_CENTRAL_CBB_FIREWALL_PWM7_BLF failed, expected value: 00100008 != actual value: 0010000a address: 13a178a8
+initialized vwdt
+initialized mail_early
+initialized fuse
+initialized vfrel
+initialized adc
+fmon_populate_monitors: found 199 monitors
+initialized fmon
+initialized mc
+initialized reset
+initialized uphy_early
+initialized emc_early
+initialized pm
+465 clocks registered
+initialized clk_mach
+initialized clk_cal_early
+initialized clk_mach_early_config
+initialized io_dpd
+initialized soctherm
+initialized regime
+initialized i2c
+vrmon_dt_init: vrmon node not found
+vrmon_chk_boot_state: found 0 rail monitors
+initialized vrmon
+initialized regulator
+\xFF\xE1I> Received ACK from psc
+I> Task: Unhalt FSI
+I> FSI unhalt skipped
+I> Task: Unhalt AUXPs
+I> SCE unhalt skipped
+I> Unhalting RCE
+I> RCE unhalt successful
+I> Unhalt\xFF\xE2initialized avfs_clk_platform
+initialized powergate
+\xFF\xE1ing DCE
+I> DCE unhalt successful
+I> APE unhalt skipped\xFF\xE2initialized \xFF\xE5[     2.5\xFF\xE2dvs
+initialized clk_\xFF\xE522868] Camera-FW on t\xFF\xE2mach_config
+suspend progress: 0x80000000
+initialized suspend
+initialized strap
+initialized mce_dbell
+\xFF\xE5234-rce-safe started
+TCU early console enabled.
+\xFF\xE1
+I> Task: Load HV/CPUBL
+I> Task: Load TOS
+I> Task: Trigger load TSEC leyblob
+I> Sending opcode 0x5353\xFF\xE2initialized emc
+initialized emc_mrq
+\xFF\xE15452 to psc
+I> Sent opcode to psc\xFF\xE2initialized clk_cal
+initialized uphy_dt
+initialized uphy_mrq
+HSIO UPHY reset has been de-asserted 0x0
+initialized uphy
+initialized pg_late
+initialized pg_mrq_init
+swdtimer_init: reg polling start w period 47 ms
+initialized swdtimer
+initialized hwwdt_late
+initialized bwmgr
+initialized thermal_host_trip
+initialized thermal_mrq
+initialized oc_mrq
+initialized reset_mrq
+initialized mail_mrq
+initialized fmon_mrq
+initialized clk_mrq
+initialized avfs_mrq
+initialized i2c_mrq
+initialized tag_mrq
+initialized bwmgr_mrq
+initialized console_mrq
+missing prod DT calibration data for 199 fmons
+initialized clk_sync_fmon_post
+\xFF\xE8
+DCE Started
+DCE_R5_Init
+MPU en\xFF\xE2initialized clk_cal_late
+initialized noc_late
+initialized cvc
+\xFF\xE8abled
+DCE_SW_Init
+\xFF\xE1
+I> Task: \xFF\xE2initialized avfs_clk_mach_post
+initialized avfs_clk_platform_post
+initialized cvc_late
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 0/2 have not matching zones 0/1
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 0/3 have not matching zone list sizes 1/3
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 0/3 have not matching zones 0/2
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 2/0 have not matching zones 1/0
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 2/3 have not matching zone list sizes 1/3
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 2/3 have not matching zones 1/2
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 3/0 have not matching zone list sizes 3/1
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 3/0 have not matching zones 2/0
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 3/2 have not matching zone list sizes 3/1
+WARNING @ [platform/drivers/rm/rm.c]: shared rails 3/2 have not matching zones 2/1
+initialized rm
+initialized console_late
+handling unreferenced clks
+enable can1_core
+enable can1_host
+enable can2_core
+enable can2_host
+enable pwm3
+enable sdmmc4_axicif
+enable mss_encrypt
+enable maud
+enable pllg_ref
+enable dsi_core
+enable aza_2xbit
+enable xusb_ss
+enable xusb_fs
+enable xusb_falcon
+enable xusb_core_mux
+enable dsi_lp
+clk_check_max_rate: pex1_c6_core rate 500000000 > max 250000000
+clk_check_max_rate: pex2_c7_core rate 500000000 > max 250000000
+clk_check_max_rate: pex2_c8_core rate 500000000 > max 250000000
+clk_check_max_rate: pex2_c9_core rate 500000000 > max 250000000
+clk_check_max_rate: pex2_c10_core rate 500000000 > max 250000000
+clk_check_max_rate: pex0_c0_core rate 500000000 > max 250000000
+clk_check_max_rate: pex0_c1_core rate 500000\xFF\xE5[     2.772982] Camer\xFF\xE2000 > max 250000000
+clk_check_max_rate: pex0_c2_core rate 500000000 > max 250\xFF\xE5a-FW on t234-rce-safe ready SHA1=e2238c99 (crt 12.417 ms, total boot 263.602 m\xFF\xE2000000
+clk_check_max_rate: pex0_c3_core rate 500000000\xFF\xE5s)
+\xFF\xE2 > max 250000000
+clk_check_max_rate: pex0_c4_core rate 500000000 > max 250000000
+clk_check_max_rate: pex1_c5_core rate 500000000 > max 250000000
+initialized clk_mach_post
+initialized pg_post
+initialized regulator_post
+initialized profile
+initialized mrq
+initialized patrol_scrubber
+initialized cactmon
+initialized extras_post
+bpmp: init complete
+\xFF\xE1Load and authenticate registered FWs
+I> Partition name: B_cpu-bootloader
+I> Size of partition: 3670016
+I> Bin\xFF\xE8Admin Task Init
+Admin Task Init complete
+Print Task Init
+RM Task Init
+SHA Task Init
+Admin Task S\xFF\xE1ary@ device:3/0 block-87808 (partition size: 0x380000), name: B_cpu-bootloader\xFF\xE8tarted
+DCE SC7 SHA Enabled
+RM Task Started
+RM Task R\xFF\xE1
+\xFF\xE8unning
+Print Tas\xFF\xE1I> strt_pg_num(87808) num_of_pgs(16) read_buf(0x40066650)
+\xFF\xE8k Started
+Print \xFF\xE1I> strt_pg_num(87824) num_of_pgs(6792) read_buf(0x272000000)
+\xFF\xE8Task Running
+SHA Task Started
+SHA Task Running
+DCE: FW Boot Complete
+Admin Task Running
+\xFF\xE1I> Partition name: B_secure-os
+I> Size of partition: 4194304
+I> Binary@ device:3/0 block-94976 (partition size: 0x400000), name: B_secure-os
+I> strt_pg_num(94976) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(94992) num_of_pgs(2560) read_buf(0xc1dc0000)
+I> MB2-params @ 0x40060000
+I> NSDRAM carveout base: 0x80000000, size: 0x1f25f0000
+I> cpubl_params: nsdram: carveout: 1, encryption: 1
+I> cpubl: Authentication Finalize Done
+I> Binary cpubl loaded successfully at 0x272000000
+I> tos: Authentication Finalize Done
+I> Binary tos loaded successfully at 0xc1dc0000
+I> Relocating OP-TEE dtb from: 0xc1eff0f0 to 0xbe040020, size: 0x2837
+I> [0] START: 0x80000000, SIZE: 0x1f25f0000
+I> [1] START: 0x276000000, SIZE: 0x2000000
+I> Setting NS memory ranges to OP-TEE dtb finished.
+I> Partition name: B_eks
+I> Size of partition: 262144
+I> Binary@ device:3/0 block-107264 (partition size: 0x40000), name: B_eks
+I> strt_pg_num(107264) num_of_pgs(16) read_buf(0x40066650)
+I> strt_pg_num(107280) num_of_pgs(8) read_buf(0xbe020000)
+I> eks: Authentication Finalize Done
+I> Binary eks loaded successfully at 0xbe020000
+I> EKB detected (length: 0x410) @ VA:0xbe020000
+I> Task: Add cpubl params integrity check
+I> Added cpubl params digest.
+I> Task: Prepare TOS params
+I> Setting EKB blob info to OPTEE dtb finished.
+I> Setting OPTEE arg3: 0xbe040020
+I> NVRNG: Health check success
+I> NVRNG: Health check success
+I> Task: OEM SC7 context save
+I> OEM sc7 context saved
+I> Task: Disable MSS perf stats
+I> Task: Program display sticky bits
+I> Task: Storage device deinit
+I> Task: SMMU external bypass disable
+I> Task: SMMU init
+I> Task: Program GICv3 registers
+I> Task: Audit firewall settings
+I> Task: Bootchain failure check
+I> Current Boot-Chain Slot: 1
+I> BR-BCT Boot-Chain is 0, and status is 1. Set UPDATE_BRBCT bit to 1
+I> Task: Burn RESERVED_ODM0 fuse
+I> Task: Lock fusing
+I> Task: Clear dec source key
+I> MB2 finished
+
+\xFF\xE4NOTICE:  BL31: v2.8(release):8a7f432be
+NOTICE:  BL31: Built : 10:30:22, Nov 30 2023
+I/TC: 
+I/TC: Non-secure external DT found
+I/TC: OP-TEE version: 3.22 (gcc version 11.3.0 (Buildroot 2022.08)) #2 Thu Nov 30 18:39:35 UTC 2023 aarch64
+I/TC: WARNING: This OP-TEE configuration might be insecure!
+I/TC: WARNING: Please check https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
+I/TC: Primary CPU initializing
+I/TC: Test OEM keys are being used. This is insecure for shipping products!
+I/TC: Primary CPU switching to normal world boot
+\xFF\xE1
+Jetson UEFI firmware (version 36.2.0-gcid-34956989 built on 2023-11-30T18:35:35+00:00)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\xFF\xE4I/TC: Reserved shared memory is disabled
+I/TC: Dynamic shared memory is enabled
+I/TC: Normal World virtualization support is disabled
+I/TC: Asynchronous notifications are disabled
+\xFF\xE1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\xFF\xE5[     5.025841] Camera-FW on t234-rce-safe started
+TCU early console enabled.
+\xFF\xE1
+
+
+
+
+
+
+
+
+\xFF\xE5[     5.120257] Camera-FW on t234-rce-safe ready SHA1=e2238c99 (crt 1.401 ms, total boot 95.923 ms)
+\xFF\xE1
+\xFF\xE4E/TC:?? 00 get_rpc_alloc_res:645 RPC allocation failed. Non-secure world result: ret=0xffff0000 ret_origin=0
+E/LD:   init_elf:486 sys_open_ta_bin(bc50d971-d4c9-42c4-82cb-343fb7f37896)
+E/TC:?? 00 ldelf_init_with_ldelf:131 ldelf failed with res: 0xffff000c
+\xFF\xE1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\x1B[2J\x1B[04D\x1B[=3h\x1B[2J\x1B[09D
+
+
+
+
+
+
+
+
+
+
+
+
+
+ASSERT [XhciDxe] /out/nvidia/bootloader/uefi/Jetson_RELEASE/edk2/MdeModulePkg/Bus/Pci/XhciDxe/Xhci.c(2078): !((((BOOLEAN)(((XhcReadOpReg ((Xhc), (0x0004))) & ((0x00000800))) == ((0x00000800))))))
+
+Resetting the system in 5 seconds.
+\xFF\xE4\xFF\xE2Shutdown state requested 1
+Rebooting system ...
