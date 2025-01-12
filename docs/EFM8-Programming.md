@@ -6,7 +6,7 @@ Guide to programming the power MCU (EFM8SB10F2G) for the Orin Nano Carrier board
 - FlashUtilCL.exe program
 
 ## Method
-1. Install FlashUtil.exe ([using utildll.exe installer](https://www.silabs.com/documents/login/software/utildll.exe))
+1. Install FlashUtil.exe ([using utildll.exe installer](https://www.silabs.com/documents/login/software/utildll.exe) or in hardware/EFM8SB10F2G)
 2. Run the following command from the C:\SiLabs\MCU\Utilities\FLASH Programming\Static Programmers\Command-Line directory, 
 `.\FlashUtilCL.exe DownloadUSB <file.hex> <Serial Number String> <Disconnect Power On> <Debug Interface>`
 - file.hex is the binary file to be flashed to the MCU (make sure this file is in the same directory as FlashUtilCL.exe)
