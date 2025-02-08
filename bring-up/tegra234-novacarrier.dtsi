@@ -12,22 +12,6 @@
 	};
 
 	bus@0 {
-		i2c@3160000 {
-			status = "okay";
-
-			eeprom@57 {
-				compatible = "atmel,24c02";
-				reg = <0x57>;
-
-				label = "system";
-				vcc-supply = <&vdd_1v8_sys>;
-				address-width = <8>;
-				pagesize = <8>;
-				size = <256>;
-				read-only;
-			};
-		};
-
 		serial@31d0000 {
 			current-speed = <115200>;
 			status = "okay";
@@ -37,6 +21,24 @@
 			assigned-clocks = <&bpmp TEGRA234_CLK_PWM3>;
 			assigned-clock-parents = <&bpmp TEGRA234_CLK_PLLP_OUT0>;
 			status = "okay";
+		};
+		
+		miscreg-dpaux@00100000 {
+
+			compatible = "nvidia,tegra194-misc-dpaux-padctl";
+			reg = <0x0 0x00100000 0x0 0xf000>;
+			dpaux_default: pinmux@0 {
+
+				dpaux0_pins {
+				        pins = "dpaux-0";
+				        function = "i2c";
+				};
+			};
+		};
+
+		i2c@31b0000 {
+			pinctrl-names = "default";
+			pinctrl-0 = <&dpaux_default>;
 		};
 
 		padctl@3520000 {
@@ -73,12 +75,17 @@
 							nvidia,function = "xusb";
 							status = "okay";
 						};
+						
+						usb3-2 {
+							nvidia,function = "xusb";
+							status = "okay";
+						};
 					};
 				};
 			};
 
 			ports {
-				/* recovery port */
+				/* recovery port + USB0 */
 				usb2-0 {
 					mode = "otg";
 					vbus-supply = <&vdd_5v0_sys>;
@@ -86,29 +93,35 @@
 					usb-role-switch;
 				};
 
-				/* hub */
+				/* USB1 */
 				usb2-1 {
 					mode = "host";
 					vbus-supply = <&vdd_1v1_hub>;
 					status = "okay";
 				};
 
-				/* M.2 Key-E */
+				/* USB2 */
 				usb2-2 {
 					mode = "host";
 					vbus-supply = <&vdd_5v0_sys>;
 					status = "okay";
 				};
 
-				/* hub */
+				/* USB0SS */
 				usb3-0 {
-					nvidia,usb2-companion = <1>;
+					nvidia,usb2-companion = <0>;
 					status = "okay";
 				};
 
-				/* J5 */
+				/* USB1SS */
 				usb3-1 {
-					nvidia,usb2-companion = <0>;
+					nvidia,usb2-companion = <1>;
+					status = "okay";
+				};
+				
+				/* USB2SS */
+				usb3-2 {
+					nvidia,usb2-companion = <2>;
 					status = "okay";
 				};
 			};
@@ -129,9 +142,10 @@
 			       <&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-1}>,
 			       <&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-2}>,
 			       <&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-0}>,
-			       <&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-1}>;
+			       <&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-1}>,
+			       <&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-2}>;
 			phy-names = "usb2-0", "usb2-1", "usb2-2", "usb3-0",
-				    "usb3-1";
+				    "usb3-1", "usb3-2";
 		};
 
 		/* C8 - Ethernet */
