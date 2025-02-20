@@ -1,9 +1,12 @@
+#!/bin/bash
+trap 'echo "Error occurred! Cleaning up..."; exit 1' ERR
+
 BSP_BRANCH=36
 BSP_MAJOR=4
 BSP_MINOR=3
-HOST_INSTALL_DIRECTORY="/home/mvanwijk/novacarrier/test"
-REPO_ROOT="/home/mvanwijk/novacarrier/novacarrier-assets"
-TOOLCHAIN_DIRECTORY="/home/mvanwijk/novacarrier/test"
+export HOST_INSTALL_DIRECTORY="/home/mvanwijk/novacarrier/test"
+export REPO_ROOT="/home/mvanwijk/novacarrier/novacarrier-assets"
+export TOOLCHAIN_DIRECTORY="/home/mvanwijk/novacarrier/test"
 
 BSP_VERSION="${BSP_BRANCH}.${BSP_MAJOR}.${BSP_MINOR}"
 L4T_RELEASE_PACKAGE="Jetson_Linux_r${BSP_VERSION}_aarch64.tbz2"
