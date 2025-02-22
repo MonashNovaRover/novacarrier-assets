@@ -23,6 +23,51 @@
 			status = "okay";
 		};
 
+		/* SPI-CAN controller 1 */
+		spi@3210000{
+			status = "okay";
+			can@0 {
+				compatible = "microchip,mcp251xfd";
+				reg = <0>;
+				clocks = <&clk20m>;
+				spi-max-frequency = <20000000>;
+				// TODO: check this GPIO(N, 1) and GPIO(H, 0) maybe swapped
+				interrupts = <&gpio TEGRA234_MAIN_GPIO(H, 0) IRQ_TYPE_EDGE_FALLING>;
+			};
+		};
+
+		/* SPI-CAN controller 2 */
+		spi@3230000{
+			status = "okay";
+			can@0 {
+				compatible = "microchip,mcp251xfd";
+				reg = <0>;
+				clocks = <&clk20m>;
+				spi-max-frequency = <20000000>;
+				// TODO: check this GPIO(N, 1) and GPIO(H, 0) maybe swapped
+				interrupts = <&gpio TEGRA234_MAIN_GPIO(N, 1) IRQ_TYPE_EDGE_FALLING>;
+			};
+		};
+
+		/* Configuring the pinmux Setting of I2C and DP1_AUX */
+		miscreg-dpaux@00100000 {
+
+                compatible = "nvidia,tegra194-misc-dpaux-padctl";
+                reg = <0x0 0x00100000 0x0 0xf000>;
+                dpaux_default: pinmux@0 {
+
+                        dpaux0_pins {
+                                pins = "dpaux-0";
+                                function = "i2c";
+                        };
+                };
+        };
+
+        i2c@31b0000 {
+                pinctrl-names = "default";
+                pinctrl-0 = <&dpaux_default>;
+        };
+
 		padctl@3520000 {
 			status = "okay";
 
@@ -68,14 +113,7 @@
 
 			ports {
 				/* recovery port + USB0 */
-				// usb2-0 {
-				//	mode = "otg";
-				//	vbus-supply = <&vdd_5v0_sys>;
-				//	status = "okay";
-				//	usb-role-switch;
-				//};
-
-				usb2-0 {/* Goes to recovery port when micro usb connected, otherwise goes to Pixhawk */
+				usb2-0 {
 					mode = "otg";
 					status = "okay";
 					vbus-supply = <&vdd_5v0_sys>;
@@ -83,10 +121,8 @@
 					connector {
 						compatible = "usb-b-connector", "gpio-usb-b-connector";
  						label = "micro-USB";
- 						//type = "micro";
  						vbus-gpio = <&gpio TEGRA234_MAIN_GPIO(Z, 1) GPIO_ACTIVE_LOW>;
 						id-gpio = <&gpio TEGRA234_MAIN_GPIO(Z, 7) GPIO_ACTIVE_LOW>;
-						//cable-connected-on-boot = <USB_ROLE_DEVICE>;
  					};
 				};
 
@@ -127,7 +163,7 @@
 		usb@3550000 {
 			status = "okay";
 			phys = <&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-0}>;
-			phy-names = "usb2-0", "usb3-0";
+			phy-names = "usb2-0";
 		};
 
 		usb@3610000 {
@@ -214,6 +250,15 @@
 			linux,code = <KEY_SLEEP>;
 		};
 	};
+
+	clocks {
+        /* 20MHz external crystal oscillator */
+        clk20m: mcp251xfd_osc {
+            #clock-cells = <0>;
+            compatible = "fixed-clock";
+            clock-frequency = <20000000>;
+        };
+    };
 
 	fan: pwm-fan {
 		compatible = "pwm-fan";
