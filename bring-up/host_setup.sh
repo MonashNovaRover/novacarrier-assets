@@ -1,12 +1,12 @@
 #!/bin/bash
-trap 'echo "Error occurred! Cleaning up..."; exit 1' ERR
+trap 'echo "Error occurred!"; exit 1' ERR
 
 BSP_BRANCH=36
 BSP_MAJOR=4
 BSP_MINOR=3
-export HOST_INSTALL_DIRECTORY="/home/mvanwijk/novacarrier/test"
-export REPO_ROOT="/home/mvanwijk/novacarrier/novacarrier-assets"
-export TOOLCHAIN_DIRECTORY="/home/mvanwijk/novacarrier/test"
+export REPO_ROOT=$(dirname $(pwd))
+export HOST_INSTALL_DIRECTORY="${REPO_ROOT}/build"
+export TOOLCHAIN_DIRECTORY=${HOST_INSTALL_DIRECTORY}
 
 BSP_VERSION="${BSP_BRANCH}.${BSP_MAJOR}.${BSP_MINOR}"
 L4T_RELEASE_PACKAGE="Jetson_Linux_r${BSP_VERSION}_aarch64.tbz2"
@@ -47,6 +47,7 @@ fi
 export CROSS_COMPILE=${TOOLCHAIN_DIRECTORY}/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
 
 # Extract L4T and Sample FS packages
+cd ${HOST_INSTALL_DIRECTORY}
 if [ -d "Linux_for_Tegra" ]; then
     echo "Linux_for_Tegra directory found"
 else
@@ -54,6 +55,14 @@ else
     tar xf ${L4T_RELEASE_PACKAGE}
     sudo tar xpf ${SAMPLE_FS_PACKAGE} -C Linux_for_Tegra/rootfs/
 fi
+
+# Flash prerequisites and apply config to rootfs
+echo "flash prerequisites..."
+cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra
+sudo ./tools/l4t_flash_prerequisites.sh
+
+echo "Applying binaries to rootfs..."
+sudo ./apply_binaries.sh
 
 # Download source files
 if [ -d "Linux_for_Tegra/source/hardware" ]; then
@@ -85,25 +94,29 @@ sudo cp ${REPO_ROOT}/bring-up/tegra234-mb1-bct-pinmux-p3767-dp-a03.dtsi ${HOST_I
 sudo cp ${REPO_ROOT}/bring-up/tegra234-mb1-bct-gpio-p3767-dp-a03.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/tegra234-mb1-bct-gpio-p3767-dp-a03.dtsi
 sudo cp ${REPO_ROOT}/bring-up/tegra234-novacarrier.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/tegra234-p3768-0000.dtsi
 
+echo "Setting carrier board EEPROM read size to 0..."
+sed -i 's|cvb_eeprom_read_size = <0x100>;|cvb_eeprom_read_size = <0x0>;|' ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/generic/BCT/tegra234-mb2-bct-misc-p3767-0000.dts
 
-# Build Jetson Linux Kernel
+# Build kernel
+echo "Building Jetson Linux Kernel..."
 cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source
-make -C kernel
+make -C kernel -j$(nproc)
 export INSTALL_MOD_PATH=${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/rootfs/
-sudo -E make install -C kernel
+sudo -E make install -C kernel -j$(nproc)
 cp kernel/kernel-jammy-src/arch/arm64/boot/Image ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/kernel/Image
 
-# Build NVIDIA Out of Tree Modules
+# Build NVIDIA OOT Modules
+echo "Building NVIDIA Out of Tree Modules..."
 export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
-make modules
-sudo -E make modules_install
+make modules -j$(nproc)
+sudo -E make modules_install -j$(nproc)
 cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra
 sudo ./tools/l4t_update_initrd.sh
 
 # Build the DTBs
 echo "Building DTBs..."
 cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source
-make dtbs
+make dtbs -j$(nproc)
 sudo cp kernel-devicetree/generic-dts/dtbs/* ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/kernel/dtb/
 
 
@@ -111,21 +124,10 @@ sudo cp kernel-devicetree/generic-dts/dtbs/* ${HOST_INSTALL_DIRECTORY}/Linux_for
 # echo "Compile device tree..."
 # dtc -I dts -O dtb -o ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/kernel/dtb/tegra234-novacarrier.dtbo ${REPO_ROOT}/bring-up/tegra234-novacarrier.dtsi
 # # dtc -I dts -O dtb -o ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/kernel/dtb/extracted_modified.dtb ${REPO_ROOT}/bring-up/extracted_modified.dts
-
 # # cp ${REPO_ROOT}/bring-up/tegra234-novacarrier+p3767-0000-nv.dtb ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/kernel/dtb/tegra234-novacarrier+p3767-0000-nv.dtb
 
-# echo "Setting carrier board EEPROM read size to 0..."
-# sed -i 's|cvb_eeprom_read_size = <0x100>;|cvb_eeprom_read_size = <0x0>;|' ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/generic/BCT/tegra234-mb2-bct-misc-p3767-0000.dts
-
-# # Flash prerequisites and apply config to rootfs
-# echo "flash prerequisites..."
-# cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra
-# sudo ./tools/l4t_flash_prerequisites.sh
-
-# echo "Applying binaries to rootfs..."
-# sudo ./apply_binaries.sh
-
-# # Create default user
-# echo "Creating default user..."
-# sudo ./tools/l4t_create_default_user.sh -u nova -p rovanova -n novacarrier --accept-license
+# Create default user
+echo "Creating default user..."
+cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra
+sudo ./tools/l4t_create_default_user.sh -u nova -p rovanova -n novacarrier --accept-license
 
