@@ -68,11 +68,26 @@
 
 			ports {
 				/* recovery port + USB0 */
-				usb2-0 {
+				// usb2-0 {
+				//	mode = "otg";
+				//	vbus-supply = <&vdd_5v0_sys>;
+				//	status = "okay";
+				//	usb-role-switch;
+				//};
+
+				usb2-0 {/* Goes to recovery port when micro usb connected, otherwise goes to Pixhawk */
 					mode = "otg";
-					vbus-supply = <&vdd_5v0_sys>;
 					status = "okay";
+					vbus-supply = <&vdd_5v0_sys>;
 					usb-role-switch;
+					connector {
+						compatible = "usb-b-connector", "gpio-usb-b-connector";
+ 						label = "micro-USB";
+ 						//type = "micro";
+ 						vbus-gpio = <&gpio TEGRA234_MAIN_GPIO(Z, 1) GPIO_ACTIVE_LOW>;
+						id-gpio = <&gpio TEGRA234_MAIN_GPIO(Z, 7) GPIO_ACTIVE_LOW>;
+						//cable-connected-on-boot = <USB_ROLE_DEVICE>;
+ 					};
 				};
 
 				/* USB1 */
@@ -111,9 +126,7 @@
 
 		usb@3550000 {
 			status = "okay";
-
-			phys = <&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-0}>,
-			       <&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-0}>;
+			phys = <&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-0}>;
 			phy-names = "usb2-0", "usb3-0";
 		};
 
