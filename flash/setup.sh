@@ -54,25 +54,38 @@ else
     echo "Extracting L4T and Sample FS packages..."
     tar xf ${L4T_RELEASE_PACKAGE}
     sudo tar xpf ${SAMPLE_FS_PACKAGE} -C Linux_for_Tegra/rootfs/
+    
+    # Flash prerequisites and apply config to rootfs
+    echo "flash prerequisites..."
+    cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra
+    sudo ./tools/l4t_flash_prerequisites.sh
+
+    echo "Applying binaries to rootfs..."
+    sudo ./apply_binaries.sh
 fi
 
-# Flash prerequisites and apply config to rootfs
-echo "flash prerequisites..."
-cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra
-sudo ./tools/l4t_flash_prerequisites.sh
-
-echo "Applying binaries to rootfs..."
-sudo ./apply_binaries.sh
+# Download source files
+cd ${HOST_INSTALL_DIRECTORY}
+if [ -f "public_sources.tbz2" ]; then
+    echo "Found public_sources.tbz2"
+else
+    echo "Downloading public_sources.tbz2..."
+    wget "https://developer.nvidia.com/downloads/embedded/l4t/r${BSP_BRANCH}_release_v${BSP_MAJOR}.${BSP_MINOR}/sources/public_sources.tbz2"
+    sudo apt install git-core
+    sudo apt install build-essential bc
+fi
 
 # Download source files
 if [ -d "Linux_for_Tegra/source/hardware" ]; then
     echo "Source directory found"
 else
-    echo "Downloading source files..."
-    sudo apt install git-core
-    sudo apt install build-essential bc
-    cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source
-    sudo ./source_sync.sh -k -t jetson_${BSP_VERSION}
+    echo "Extracting source files..."
+    cd ${HOST_INSTALL_DIRECTORY}
+    tar xf public_sources.tbz2 -C Linux_for_Tegra/..
+    cd Linux_for_Tegra/source
+    tar xf kernel_src.tbz2
+    tar xf kernel_oot_modules_src.tbz2
+    tar xf nvidia_kernel_display_driver_source.tbz2
 fi
 
 # Remove fusb301@25 from the device tree
@@ -82,16 +95,6 @@ if [[ "$(sed -n '181p' ${COMMON_DTSI})" == "		padctl@3520000 {" && "$(sed -n '21
     sudo sed -i '181,191d' ${COMMON_DTSI}
     sudo sed -i '205,220d' ${COMMON_DTSI}
 fi
-
-
-# # Configuring the pinmux Setting of I2C and DP1_AUX
-# if [ $(sed -n '5p' ${COMMON_DTSI}) == "expected string" ]; then
-#     echo "Configuring the pinmux Setting of I2C and DP1_AUX..."
-#     sudo sed -i '122,124d' ${COMMON_DTSI}
-#     cd ${REPO_ROOT}/bring-up
-#     sudo sed -i '121r I2C_DPAUX.dts' ${COMMON_DTSI}
-# fi
-
 
 # Remove tegra-spidev for SPI-CAN controllers
 if [[ $(sed -n '133p' ${COMMON_DTSI}) == '			spi@0 {' && $(sed -n '134p' ${COMMON_DTSI}) == '				compatible = "tegra-spidev";' ]]; then
@@ -106,14 +109,19 @@ fi
 
 # Add required files
 echo "Copying required files..."
-sudo cp ${REPO_ROOT}/bring-up/novacarrier.conf ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/novacarrier.conf
-sudo cp ${REPO_ROOT}/bring-up/tegra234-mb1-bct-padvoltage-p3767-dp-a03.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/generic/BCT/tegra234-mb1-bct-padvoltage-p3767-dp-a03.dtsi
-sudo cp ${REPO_ROOT}/bring-up/tegra234-mb1-bct-pinmux-p3767-dp-a03.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/generic/BCT/tegra234-mb1-bct-pinmux-p3767-dp-a03.dtsi
-sudo cp ${REPO_ROOT}/bring-up/tegra234-mb1-bct-gpio-p3767-dp-a03.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/tegra234-mb1-bct-gpio-p3767-dp-a03.dtsi
-sudo cp ${REPO_ROOT}/bring-up/tegra234-novacarrier.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/tegra234-p3768-0000.dtsi
+sudo cp ${REPO_ROOT}/flash/novacarrier.conf ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/novacarrier.conf
+sudo cp ${REPO_ROOT}/flash/tegra234-mb1-bct-padvoltage-p3767-dp-a03.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/generic/BCT/tegra234-mb1-bct-padvoltage-p3767-dp-a03.dtsi
+sudo cp ${REPO_ROOT}/flash/tegra234-mb1-bct-pinmux-p3767-dp-a03.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/generic/BCT/tegra234-mb1-bct-pinmux-p3767-dp-a03.dtsi
+sudo cp ${REPO_ROOT}/flash/tegra234-mb1-bct-gpio-p3767-dp-a03.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/tegra234-mb1-bct-gpio-p3767-dp-a03.dtsi
+sudo cp ${REPO_ROOT}/flash/tegra234-novacarrier.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/tegra234-p3768-0000.dtsi
 
 echo "Setting carrier board EEPROM read size to 0..."
 sed -i 's|cvb_eeprom_read_size = <0x100>;|cvb_eeprom_read_size = <0x0>;|' ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/generic/BCT/tegra234-mb2-bct-misc-p3767-0000.dts
+
+# # Setup kernel config
+echo "Setting up kernel config..."
+# sudo apt install wget lbzip2 build-essential bc zip libgmp-dev libmpfr-dev libmpc-dev vim-common libncurses-dev bison flex libssl-dev libelf-dev
+sudo cp ${REPO_ROOT}/flash/defconfig ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/configs/defconfig
 
 # Build kernel
 echo "Building Jetson Linux Kernel..."
