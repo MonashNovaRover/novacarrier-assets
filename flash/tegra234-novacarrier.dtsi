@@ -23,29 +23,33 @@
 			status = "okay";
 		};
 
-		/* SPI-CAN controller 1 */
-		spi@3210000{
+        spi@3210000{ /* SPI0 */
 			status = "okay";
-			can@0 {
-				compatible = "microchip,mcp251xfd";
-				reg = <0>;
-				clocks = <&clk20m>;
-				spi-max-frequency = <20000000>;
-				// TODO: check this GPIO(N, 1) and GPIO(H, 0) maybe swapped
-				interrupts = <&gpio TEGRA234_MAIN_GPIO(H, 0) IRQ_TYPE_EDGE_FALLING>;
-			};
-		};
+            can@0 {
+                compatible = "microchip,mcp251xfd";
+                reg = <0x0>;
+                // interrupt-parent = <&gpio>; // Use the GPIO controller
+                // interrupts = <TEGRA234_MAIN_GPIO(H, 0) IRQ_TYPE_LEVEL_LOW>; // GPIO3_PZ.07 is SPI0_CS1 for MCP2518 interrupt
+                interrupts-extended = <&gpio TEGRA234_MAIN_GPIO(N, 1) IRQ_TYPE_LEVEL_LOW>;
+				spi-max-frequency = <2000000>; // Set the max frequency to 2MHz
+                clocks = <&clk20m>; // Use the 20MHz clock};
+                nvidia,enable-hw-based-cs;
+            };
+        };
+
 
 		/* SPI-CAN controller 2 */
 		spi@3230000{
 			status = "okay";
 			can@0 {
 				compatible = "microchip,mcp251xfd";
-				reg = <0>;
+				reg = <0x0>;
 				clocks = <&clk20m>;
-				spi-max-frequency = <20000000>;
+				spi-max-frequency = <2000000>;
 				// TODO: check this GPIO(N, 1) and GPIO(H, 0) maybe swapped
-				interrupts = <&gpio TEGRA234_MAIN_GPIO(N, 1) IRQ_TYPE_EDGE_FALLING>;
+				// interrupts = <&gpio TEGRA234_MAIN_GPIO(N, 1) IRQ_TYPE_EDGE_FALLING>;
+				interrupts-extended = <&gpio TEGRA234_MAIN_GPIO(H, 0) IRQ_TYPE_LEVEL_LOW>;
+				nvidia,enable-hw-based-cs;
 			};
 		};
 
@@ -252,13 +256,16 @@
 	};
 
 	clocks {
-        /* 20MHz external crystal oscillator */
-        clk20m: mcp251xfd_osc {
-            #clock-cells = <0>;
-            compatible = "fixed-clock";
-            clock-frequency = <20000000>;
-        };
+            // 20MHz external crystal oscillator
+            clk20m: mcp251x_osc {
+                compatible = "fixed-clock";
+                #clock-cells = <0>;
+                clock-frequency = <20000000>;
+                clock-accuracy = <100>;
+                clock-output-names = "mcp251x_clk20m";
+            };
     };
+
 
 	fan: pwm-fan {
 		compatible = "pwm-fan";
