@@ -1,6 +1,7 @@
 #!/bin/bash
 # HOST_INSTALL_DIRECTORY="/home/mvanwijk/novacarrier/test"
 # source host_setup.sh
+exec > >(tee flash.log) 2>&1
 export REPO_ROOT=$(dirname $(pwd))
 export HOST_INSTALL_DIRECTORY="${REPO_ROOT}/build"
 cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra
