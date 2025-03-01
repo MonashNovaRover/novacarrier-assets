@@ -91,25 +91,9 @@ else
     tar xf nvidia_kernel_display_driver_source.tbz2
 fi
 
-# Remove fusb301@25 from the device tree
+# Edit device tree
 export COMMON_DTSI=${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/nv-platform/tegra234-p3768-0000+p3767-xxxx-nv-common.dtsi
 edit_nvidia_dts ${COMMON_DTSI}
-# if [[ "$(sed -n '181p' ${COMMON_DTSI})" == "		padctl@3520000 {" && "$(sed -n '216p' ${COMMON_DTSI})" == "			fusb301@25 {" ]]; then
-#     echo "Removing fusb301@25 from the device tree..."
-#     sudo sed -i '181,191d' ${COMMON_DTSI}
-#     sudo sed -i '205,220d' ${COMMON_DTSI}
-# fi
-
-# # Remove tegra-spidev for SPI-CAN controllers
-# if [[ $(sed -n '133p' ${COMMON_DTSI}) == '			spi@0 {' && $(sed -n '134p' ${COMMON_DTSI}) == '				compatible = "tegra-spidev";' ]]; then
-#     echo "Removing tegra-spidev for SPI-CAN controller 1..."
-#     sed -i '133,142d' ${COMMON_DTSI}
-# fi
-
-# if [[ $(sed -n '149p' ${COMMON_DTSI}) == '			spi@0 {' && $(sed -n '150p' ${COMMON_DTSI}) == '				compatible = "tegra-spidev";' ]]; then
-#     echo "Removing tegra-spidev for SPI-CAN controller 2..."
-#     sed -i '149,158d' ${COMMON_DTSI}
-# fi
 
 # Add required files
 echo "Copying required files..."
@@ -124,7 +108,7 @@ sed -i 's|cvb_eeprom_read_size = <0x100>;|cvb_eeprom_read_size = <0x0>;|' ${HOST
 
 # Setup kernel config
 echo "Setting up kernel config..."
-# sudo apt install wget lbzip2 build-essential bc zip libgmp-dev libmpfr-dev libmpc-dev vim-common libncurses-dev bison flex libssl-dev libelf-dev
+sudo apt install wget lbzip2 build-essential bc zip libgmp-dev libmpfr-dev libmpc-dev vim-common libncurses-dev bison flex libssl-dev libelf-dev
 sudo cp ${REPO_ROOT}/flash/defconfig ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/configs/defconfig
 
 # Build kernel
