@@ -6,7 +6,10 @@ export REPO_ROOT=$(dirname $(pwd))
 export HOST_INSTALL_DIRECTORY="${REPO_ROOT}/build"
 cd ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra
 
-# TODO: Check lsusb
+if [ -z "$(lsusb | grep NVIDIA)" ]; then
+    echo "Please connect the device to the host"
+    exit 1
+fi
 
 sudo ./tools/kernel_flash/l4t_initrd_flash.sh --external-device nvme0n1p1 \
 -c tools/kernel_flash//flash_l4t_t234_nvme.xml -p "-c bootloader/generic/cfg/flash_t234_qspi.xml" \
