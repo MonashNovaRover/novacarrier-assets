@@ -102,6 +102,7 @@ sudo cp ${REPO_ROOT}/flash/tegra234-mb1-bct-padvoltage-p3767-dp-a03.dtsi ${HOST_
 sudo cp ${REPO_ROOT}/flash/tegra234-mb1-bct-pinmux-p3767-dp-a03.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/generic/BCT/tegra234-mb1-bct-pinmux-p3767-dp-a03.dtsi
 sudo cp ${REPO_ROOT}/flash/tegra234-mb1-bct-gpio-p3767-dp-a03.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/tegra234-mb1-bct-gpio-p3767-dp-a03.dtsi
 sudo cp ${REPO_ROOT}/flash/tegra234-novacarrier.dtsi ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/tegra234-p3768-0000.dtsi
+sudo cp ${REPO_ROOT}/flash/spi-tegra114.txt ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/source/kernel/kernel-jammy-src/drivers/spi/spi-tegra114.c
 
 echo "Setting carrier board EEPROM read size to 0..."
 sed -i 's|cvb_eeprom_read_size = <0x100>;|cvb_eeprom_read_size = <0x0>;|' ${HOST_INSTALL_DIRECTORY}/Linux_for_Tegra/bootloader/generic/BCT/tegra234-mb2-bct-misc-p3767-0000.dts
