@@ -2,8 +2,25 @@
 Guide to programming the power MCU (EFM8SB10F2G) for the Orin Nano Carrier board. 
 
 ## Requirements
+- Silicon Labs USB Debug Adapter
 - Windows Machine
 - FlashUtilCL.exe program
+
+## Hardware Connection
+To program the EFM8SB10F2G, you will need to connect 3 wires (C2D,  C2CK and GND) and power (usually through the barrel jack connector). Connect the C2D, C2CK and GND nets on the PCB to the corresponding wires from the USB Debug Adapter.
+Images below for reference. 
+
+<div style="display: flex; justify-content: center; gap: 10px;">
+    <img src="ERF8Connection.png" alt="ERF8Connection" width="56%">
+    <img src="ERF8Programming.jpg" alt="ERF8Programming" width="34%">
+</div>
+
+<div style="display: flex; justify-content: center; gap: 10px;">
+    <img src="ERF8ProgrammingHeader2.png" alt="ERF8ProgrammingHeader" width="45%"/>
+  <img src="ERF8ProgrammingHeaderPCB.png" alt="ERF8ProgrammingHeaderPCB" width="45%"/>
+</div>
+
+
 
 ## Method
 1. Install FlashUtil.exe ([using utildll.exe installer](https://www.silabs.com/documents/login/software/utildll.exe) or in hardware/EFM8SB10F2G)
@@ -21,4 +38,6 @@ For the default NVIDIA firmware file EFM8SB10F2G.hex with USB Debug Adapter seri
 [https://community.silabs.com/s/article/how-to-use-flash-utility-command-line-tool-for-multi-device-jtag-chain-programmi](https://community.silabs.com/s/article/how-to-use-flash-utility-command-line-tool-for-multi-device-jtag-chain-programmi)
 https://community.silabs.com/s/question/0D51M00007xePkRSAU/flashefm8?language=en_US 
 https://www.silabs.com/documents/public/application-notes/AN136-production-programming-options.pdf
-https://www.silabs.com/documents/public/application-notes/an117.pdf
+https://www.silabs.com/documents/public/application-notes/an117.pdf <br/>
+https://www.silabs.com/documents/public/user-guides/8-bit-USB-Debug-Adapter.pdf
+
