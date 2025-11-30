@@ -29,8 +29,9 @@ To recover or correctly flash a Jetson SOM intended for the MNR JC:
 
 1. **Flash the MNR JC firmware using the NVIDIA devkit** (since the Jetson SOM can enter OTG mode with any firmware on the NVIDIA devkit).
 2. **Transplant the Jetson SOM back onto the MNR JC.**
-3. If you need to reflash again later, the Jetson SOM will now correctly enter OTG mode on the MNR JC **with both MNR JC DIP switches ON**, because the MNR JC firmware contains the OTG fix.
+3. If you need to reflash again later, the Jetson SOM will now correctly enter OTG mode on the MNR JC **with both MNR JC DIP switches ON and a jumper wire shorting pin 18 of J14C to GND**, because the MNR JC firmware contains the OTG fix.
 
+For more information regarding OTG behaviour on the MNR JC refer to [USB_OTG_BEHAVIOUR.md](USB_OTG_BEHAVIOUR.md).
 
 ## Steps
 
